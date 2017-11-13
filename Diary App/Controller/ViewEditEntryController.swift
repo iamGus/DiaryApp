@@ -7,21 +7,33 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewEditEntryController: UIViewController {
+    
+    @IBOutlet weak var textField: UITextView!
+    
+    var entry: Entry?
+    var context: NSManagedObjectContext!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if let entry = entry {
+            textField.text = entry.text
+        }
     }
     
-
+    // Updating an entry
+    @IBAction func save(_ sender: Any) {
+        guard let newText = textField.text, !newText.isEmpty else { return /* Note return popup of empty text */  }
+        if let entry = entry {
+            entry.text = newText
+            context.saveChanges()
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

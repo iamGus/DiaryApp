@@ -25,7 +25,7 @@ class NewEntryController: UIViewController {
  
     @IBAction func save(_ sender: Any) {
         
-        guard let text = textField.text, !text.isEmpty else { return }
+        guard let text = textField.text, !text.isEmpty else { return /* Note return popup of empty text */ } 
         
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as! Entry
         

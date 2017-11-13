@@ -49,6 +49,13 @@ class DiaryMasterController: UITableViewController {
         return configureCell(cell, at: indexPath)
     }
     
+    // Set action for delete button
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let entry = fetchedResultsController.object(at: indexPath)
+        managedObjectContext.delete(entry)
+        managedObjectContext.saveChanges()
+    }
+    
     // Helper to return configured cell
     private func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
         let entry = fetchedResultsController.object(at: indexPath)
@@ -58,6 +65,7 @@ class DiaryMasterController: UITableViewController {
         
         return cell
     }
+
     
 
     /*
@@ -105,13 +113,25 @@ class DiaryMasterController: UITableViewController {
     }
     */
     
+    // Mark: UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+    
     // MARK: Navigation
     
     // NOTE: The managedObjectContext instance on NewEntryController is using dependency Injection so is using same as MasterDetail. May need to change to singleton object depending on how using seperate view for cell.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newEntry" {
             let newEntryController = segue.destination as! NewEntryController
-            newEntryController.managedObjectContext = self.managedObjectContext
+            newEntryController.managedObjectContext = self.managedObjectContext // send referance of context
+        } else if segue.identifier == "showDetail" {
+            guard let detailsViewController = segue.destination as? ViewEditEntryController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            let entry = fetchedResultsController.object(at: indexPath)
+            detailsViewController.entry = entry // pass over selected entry data
+            detailsViewController.context = self.managedObjectContext // send referance of context
         }
     }
 
