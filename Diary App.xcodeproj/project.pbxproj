@@ -19,6 +19,7 @@
 		18ED750B1FB5AA33007C3A4A /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED75091FB5AA33007C3A4A /* Entry+CoreDataClass.swift */; };
 		18ED750C1FB5AA33007C3A4A /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED750A1FB5AA33007C3A4A /* Entry+CoreDataProperties.swift */; };
 		18F3210F1FB451AE00B53E31 /* DiaryMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3210E1FB451AE00B53E31 /* DiaryMasterController.swift */; };
+		18F43D511FB99D7000C31E2A /* DiaryFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F43D501FB99D7000C31E2A /* DiaryFetchedResultsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		18ED75091FB5AA33007C3A4A /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		18ED750A1FB5AA33007C3A4A /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		18F3210E1FB451AE00B53E31 /* DiaryMasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMasterController.swift; sourceTree = "<group>"; };
+		18F43D501FB99D7000C31E2A /* DiaryFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryFetchedResultsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				18F3210E1FB451AE00B53E31 /* DiaryMasterController.swift */,
+				18F43D501FB99D7000C31E2A /* DiaryFetchedResultsController.swift */,
 				18ED75051FB5A662007C3A4A /* NewEntryController.swift */,
 				18ED75071FB5A68D007C3A4A /* ViewEditEntryController.swift */,
 			);
@@ -254,6 +257,7 @@
 				18ED750B1FB5AA33007C3A4A /* Entry+CoreDataClass.swift in Sources */,
 				183FBAAF1FB326DD000E0ADC /* AppDelegate.swift in Sources */,
 				18E3DE431FB3489000A6A011 /* Diary.xcdatamodeld in Sources */,
+				18F43D511FB99D7000C31E2A /* DiaryFetchedResultsController.swift in Sources */,
 				18ED750C1FB5AA33007C3A4A /* Entry+CoreDataProperties.swift in Sources */,
 				18F3210F1FB451AE00B53E31 /* DiaryMasterController.swift in Sources */,
 				18ED75061FB5A662007C3A4A /* NewEntryController.swift in Sources */,

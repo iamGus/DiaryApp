@@ -13,23 +13,15 @@ class DiaryMasterController: UITableViewController {
     
     let managedObjectContext = CoreDataStack().managedObjectContext
     
-    
-    lazy var fetchedResultsController: NSFetchedResultsController<Entry> = {
-        let request: NSFetchRequest<Entry> = Entry.fetchRequest()
-        let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        return controller
+    // Use fetched results controller
+    lazy var fetchedResultsController: DiaryFetchedResultsController = {
+        return DiaryFetchedResultsController(managedObjectContext: self.managedObjectContext, tableView: self.tableView)
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchedResultsController.delegate = self
-        
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            print("Error fetching item objects: \(error.localizedDescription)")
-        }
+   
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,8 +117,3 @@ class DiaryMasterController: UITableViewController {
 
 }
 
-extension DiaryMasterController: NSFetchedResultsControllerDelegate {
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        tableView.reloadData()
-    }
-}
