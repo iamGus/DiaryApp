@@ -20,11 +20,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="210" id="xy7-vM-rWh">
-                                <rect key="frame" x="0.0" y="28" width="375" height="210"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" id="xy7-vM-rWh" customClass="EntryCell" customModule="Diary_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xy7-vM-rWh" id="jjo-AB-pLu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="209.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_noimage" translatesAutoresizingMaskIntoConstraints="NO" id="TgJ-o5-d1h">
@@ -42,7 +42,7 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6df-vM-YAW" userLabel="Contents View">
-                                            <rect key="frame" x="105" y="20" width="254" height="179"/>
+                                            <rect key="frame" x="105" y="20" width="254" height="13"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday 13th November" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ph3-te-f2X">
                                                     <rect key="frame" x="0.0" y="0.0" width="244" height="20.5"/>
@@ -102,6 +102,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateTitleLabel" destination="ph3-te-f2X" id="YfT-ce-KRv"/>
+                                    <outlet property="entryTextLabel" destination="2Lo-Ic-gac" id="h1g-Xq-TbW"/>
+                                    <outlet property="locationIcon" destination="2k9-gx-1Jb" id="QiR-8X-tZ8"/>
+                                    <outlet property="locationTextLabel" destination="LOT-XH-aKW" id="ulI-G8-ZXl"/>
+                                    <outlet property="moodIcon" destination="yyG-h1-opq" id="yFQ-s9-R5P"/>
                                     <segue destination="eup-50-QOC" kind="show" identifier="showDetail" id="53a-qB-nWk"/>
                                 </connections>
                             </tableViewCell>

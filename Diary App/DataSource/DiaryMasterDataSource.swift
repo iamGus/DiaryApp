@@ -38,9 +38,14 @@ class DiaryMasterDataSource: NSObject, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EntryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: EntryCell.reuseIdentifier, for: indexPath) as! EntryCell
         
-        return configureCell(cell, at: indexPath)
+        let entry = fetchedResultsController.object(at: indexPath)
+        let viewModel = EntryCellViewModel(entry: entry) // get viewmodel of cell
+        
+        cell.configure(with: viewModel) // Pass viewmodel of cell to cell view
+        
+        return cell
     }
     
     // Set action for delete button
@@ -51,14 +56,18 @@ class DiaryMasterDataSource: NSObject, UITableViewDataSource {
     }
     
     // Helper to return configured cell
+   
+    /*
+    //no longer used
     private func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
         let entry = fetchedResultsController.object(at: indexPath)
         
         cell.textLabel?.text = entry.text
-        cell.detailTextLabel?.text = entry.dateCreated?.description
+        cell.detailTextLabel?.text = entry.dateCreated.description
         
         return cell
     }
+ */
     
     func object(at indexPath: IndexPath) -> Entry {
         return fetchedResultsController.object(at: indexPath)

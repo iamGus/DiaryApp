@@ -21,6 +21,8 @@
 		18F3210F1FB451AE00B53E31 /* DiaryMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3210E1FB451AE00B53E31 /* DiaryMasterController.swift */; };
 		18F43D511FB99D7000C31E2A /* DiaryFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F43D501FB99D7000C31E2A /* DiaryFetchedResultsController.swift */; };
 		18F43D531FB9B6B200C31E2A /* DiaryMasterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F43D521FB9B6B200C31E2A /* DiaryMasterDataSource.swift */; };
+		18F43D561FB9D53900C31E2A /* EntryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F43D551FB9D53900C31E2A /* EntryCellViewModel.swift */; };
+		18F43D591FB9D57D00C31E2A /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F43D581FB9D57D00C31E2A /* EntryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		18F3210E1FB451AE00B53E31 /* DiaryMasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMasterController.swift; sourceTree = "<group>"; };
 		18F43D501FB99D7000C31E2A /* DiaryFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryFetchedResultsController.swift; sourceTree = "<group>"; };
 		18F43D521FB9B6B200C31E2A /* DiaryMasterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMasterDataSource.swift; sourceTree = "<group>"; };
+		18F43D551FB9D53900C31E2A /* EntryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCellViewModel.swift; sourceTree = "<group>"; };
+		18F43D581FB9D57D00C31E2A /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				18ED750F1FB5B2DE007C3A4A /* Controller */,
+				18F43D541FB9D51400C31E2A /* View Model */,
+				18F43D571FB9D54B00C31E2A /* Views */,
 				18ED750D1FB5B286007C3A4A /* Model */,
 				18E3DE441FB348A200A6A011 /* DataSource */,
 				183FBAAE1FB326DD000E0ADC /* AppDelegate.swift */,
@@ -150,6 +156,22 @@
 				18ED75071FB5A68D007C3A4A /* ViewEditEntryController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		18F43D541FB9D51400C31E2A /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				18F43D551FB9D53900C31E2A /* EntryCellViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		18F43D571FB9D54B00C31E2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18F43D581FB9D57D00C31E2A /* EntryCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +281,11 @@
 				183FBACF1FB33CE6000E0ADC /* CoreDataStack.swift in Sources */,
 				18ED75081FB5A68D007C3A4A /* ViewEditEntryController.swift in Sources */,
 				18ED750B1FB5AA33007C3A4A /* Entry+CoreDataClass.swift in Sources */,
+				18F43D591FB9D57D00C31E2A /* EntryCell.swift in Sources */,
 				183FBAAF1FB326DD000E0ADC /* AppDelegate.swift in Sources */,
 				18E3DE431FB3489000A6A011 /* Diary.xcdatamodeld in Sources */,
 				18F43D511FB99D7000C31E2A /* DiaryFetchedResultsController.swift in Sources */,
+				18F43D561FB9D53900C31E2A /* EntryCellViewModel.swift in Sources */,
 				18ED750C1FB5AA33007C3A4A /* Entry+CoreDataProperties.swift in Sources */,
 				18F3210F1FB451AE00B53E31 /* DiaryMasterController.swift in Sources */,
 				18ED75061FB5A662007C3A4A /* NewEntryController.swift in Sources */,

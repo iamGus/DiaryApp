@@ -20,10 +20,19 @@ extension Entry {
         return request
     }
 
-    @NSManaged public var dateCreated: NSDate?
+    @NSManaged public var dateCreated: NSDate
     @NSManaged public var dateEdited: NSDate?
     @NSManaged public var location: String?
     @NSManaged public var mood: Int16
-    @NSManaged public var text: String?
+    @NSManaged public var text: String
+    
+    var moodStatus: Mood {
+        get {
+            return Mood(rawValue: Int(self.mood))!
+        }
+        set {
+            self.mood = Int16(newValue.rawValue)
+        }
+    }
 
 }
