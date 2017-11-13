@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,12 +20,86 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" id="xy7-vM-rWh">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="210" id="xy7-vM-rWh">
+                                <rect key="frame" x="0.0" y="28" width="375" height="210"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xy7-vM-rWh" id="jjo-AB-pLu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="209.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_noimage" translatesAutoresizingMaskIntoConstraints="NO" id="TgJ-o5-d1h">
+                                            <rect key="frame" x="10" y="20" width="75" height="75"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="YFx-xL-dd4"/>
+                                                <constraint firstAttribute="height" constant="75" id="uel-Ss-86b"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_happy" translatesAutoresizingMaskIntoConstraints="NO" id="yyG-h1-opq">
+                                            <rect key="frame" x="60" y="70" width="25" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="25" id="6gd-Ww-Gfq"/>
+                                                <constraint firstAttribute="width" constant="25" id="jJJ-5M-UoP"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6df-vM-YAW" userLabel="Contents View">
+                                            <rect key="frame" x="105" y="20" width="254" height="179"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday 13th November" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ph3-te-f2X">
+                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.22763934731483459" green="0.30315238237380981" blue="0.43397828936576843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-Ic-gac">
+                                                    <rect key="frame" x="0.0" y="28.5" width="254" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="250" constant="100" id="BnK-dA-xgf"/>
+                                                    </constraints>
+                                                    <string key="text">Today was a good day, we travelled to an outer part of Bath today to see if we could find some craft beer. The weather was overcast but try and overall, I had a pretty good day.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.22763934729999999" green="0.30315238239999998" blue="0.43397828939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_geolocate" translatesAutoresizingMaskIntoConstraints="NO" id="2k9-gx-1Jb">
+                                                    <rect key="frame" x="0.0" y="126.5" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="9cG-qP-Tj2"/>
+                                                        <constraint firstAttribute="width" constant="20" id="yag-fL-WBT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main street, Bath, UK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOT-XH-aKW">
+                                                    <rect key="frame" x="28" y="131" width="218" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="2Lo-Ic-gac" secondAttribute="trailing" id="2aH-Kr-kQG"/>
+                                                <constraint firstItem="LOT-XH-aKW" firstAttribute="leading" secondItem="2k9-gx-1Jb" secondAttribute="trailing" constant="8" id="3Oh-Us-yMN"/>
+                                                <constraint firstItem="2Lo-Ic-gac" firstAttribute="leading" secondItem="6df-vM-YAW" secondAttribute="leading" id="9Sd-Rg-cjZ"/>
+                                                <constraint firstItem="2k9-gx-1Jb" firstAttribute="top" secondItem="2Lo-Ic-gac" secondAttribute="bottom" constant="8" id="GSC-Z6-kkG"/>
+                                                <constraint firstAttribute="trailing" secondItem="ph3-te-f2X" secondAttribute="trailing" constant="10" id="H0o-Ue-NCE"/>
+                                                <constraint firstAttribute="trailing" secondItem="LOT-XH-aKW" secondAttribute="trailing" constant="8" id="JEf-U3-ESe"/>
+                                                <constraint firstItem="2Lo-Ic-gac" firstAttribute="top" secondItem="ph3-te-f2X" secondAttribute="bottom" constant="8" id="Qgx-0N-0hL"/>
+                                                <constraint firstItem="ph3-te-f2X" firstAttribute="leading" secondItem="6df-vM-YAW" secondAttribute="leading" id="WsB-Id-Hxt"/>
+                                                <constraint firstItem="LOT-XH-aKW" firstAttribute="centerY" secondItem="2k9-gx-1Jb" secondAttribute="centerY" id="Z4s-qs-oAo"/>
+                                                <constraint firstItem="2k9-gx-1Jb" firstAttribute="leading" secondItem="6df-vM-YAW" secondAttribute="leading" id="dfJ-Tm-Nnd"/>
+                                                <constraint firstItem="ph3-te-f2X" firstAttribute="top" secondItem="6df-vM-YAW" secondAttribute="top" id="ytl-nI-sfV"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6df-vM-YAW" secondAttribute="trailing" id="CXH-kN-FFO"/>
+                                        <constraint firstItem="TgJ-o5-d1h" firstAttribute="top" secondItem="jjo-AB-pLu" secondAttribute="top" constant="20" id="EVf-XQ-CWD"/>
+                                        <constraint firstItem="6df-vM-YAW" firstAttribute="leading" secondItem="TgJ-o5-d1h" secondAttribute="trailing" constant="20" id="MXA-ri-SHr"/>
+                                        <constraint firstItem="6df-vM-YAW" firstAttribute="top" secondItem="TgJ-o5-d1h" secondAttribute="top" id="MYY-Gw-eLd"/>
+                                        <constraint firstItem="yyG-h1-opq" firstAttribute="trailing" secondItem="TgJ-o5-d1h" secondAttribute="trailing" id="Zd7-Zh-FQw"/>
+                                        <constraint firstItem="yyG-h1-opq" firstAttribute="bottom" secondItem="TgJ-o5-d1h" secondAttribute="bottom" id="dL2-Q3-RE7"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6df-vM-YAW" secondAttribute="bottom" id="es7-Kj-Vsl"/>
+                                        <constraint firstItem="TgJ-o5-d1h" firstAttribute="leading" secondItem="jjo-AB-pLu" secondAttribute="leading" constant="10" id="xhZ-eD-ChZ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="eup-50-QOC" kind="show" identifier="showDetail" id="53a-qB-nWk"/>
@@ -46,7 +121,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5o3-TC-CC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771" y="117"/>
+            <point key="canvasLocation" x="770.39999999999998" y="116.49175412293854"/>
         </scene>
         <!--View Edit Entry Controller-->
         <scene sceneID="wh1-yT-Icw">
@@ -57,7 +132,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ImV-LL-X5f">
-                                <rect key="frame" x="67" y="105" width="240" height="128"/>
+                                <rect key="frame" x="67.5" y="105" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="qHB-D9-E7g"/>
@@ -98,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vZm-ze-wmd">
-                                <rect key="frame" x="67" y="106" width="240" height="128"/>
+                                <rect key="frame" x="67.5" y="106" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="0an-WD-zRS"/>
@@ -152,5 +227,8 @@
     </scenes>
     <resources>
         <image name="Icn_write" width="30" height="21"/>
+        <image name="icn_geolocate" width="17" height="17"/>
+        <image name="icn_happy" width="25" height="25"/>
+        <image name="icn_noimage" width="47" height="47"/>
     </resources>
 </document>

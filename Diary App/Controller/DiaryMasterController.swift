@@ -29,6 +29,10 @@ class DiaryMasterController: UITableViewController {
         return .delete
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
     // MARK: Navigation
     
     // NOTE: The managedObjectContext instance on NewEntryController is using dependency Injection so is using same as MasterDetail. May need to change to singleton object depending on how using seperate view for cell.

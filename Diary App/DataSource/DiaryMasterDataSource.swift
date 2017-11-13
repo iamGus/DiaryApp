@@ -63,13 +63,5 @@ class DiaryMasterDataSource: NSObject, UITableViewDataSource {
     func object(at indexPath: IndexPath) -> Entry {
         return fetchedResultsController.object(at: indexPath)
     }
-    
-    
-    
-
-    
-
-    
-
  
 }
