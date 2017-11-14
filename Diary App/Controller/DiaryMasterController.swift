@@ -27,6 +27,8 @@ class DiaryMasterController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 170
         topTitleLabel.title = dataSource.todaysDate()
+        
+        
     }
     
     // Mark: UITableViewDelegate
