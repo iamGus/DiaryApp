@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Diary Master Controller-->
+        <!--Todays date-->
         <scene sceneID="BUZ-Fa-RSn">
             <objects>
                 <tableViewController id="Qcn-hQ-pwK" customClass="DiaryMasterController" customModule="Diary_App" customModuleProvider="target" sceneMemberID="viewController">
@@ -114,13 +114,16 @@
                             <outlet property="delegate" destination="Qcn-hQ-pwK" id="GtB-qd-b7f"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="J0x-gM-qYh">
+                    <navigationItem key="navigationItem" title="Todays date" id="J0x-gM-qYh">
                         <barButtonItem key="rightBarButtonItem" image="Icn_write" landscapeImage="Icn_write" style="plain" id="Yz2-n8-htR">
                             <connections>
                                 <segue destination="t8X-po-tDA" kind="show" identifier="newEntry" id="LLS-4Y-TNV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="topTitleLabel" destination="J0x-gM-qYh" id="3UX-aS-sdU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5o3-TC-CC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -217,6 +220,9 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.28528276085853577" green="0.6399993896484375" blue="0.75233727693557739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -77,5 +77,12 @@ class DiaryMasterDataSource: NSObject, UITableViewDataSource {
     func object(at indexPath: IndexPath) -> Entry {
         return fetchedResultsController.object(at: indexPath)
     }
+    
+    func todaysDate() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM d, YYYY"
+        return formatter.string(from: date)
+    }
  
 }

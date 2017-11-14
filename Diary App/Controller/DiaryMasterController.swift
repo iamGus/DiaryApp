@@ -11,6 +11,9 @@ import CoreData
 
 class DiaryMasterController: UITableViewController {
     
+    @IBOutlet weak var topTitleLabel: UINavigationItem!
+    
+    
     let managedObjectContext = CoreDataStack().managedObjectContext
     
     lazy var dataSource: DiaryMasterDataSource = {
@@ -23,6 +26,7 @@ class DiaryMasterController: UITableViewController {
         tableView.dataSource = dataSource
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 170
+        topTitleLabel.title = dataSource.todaysDate()
     }
     
     // Mark: UITableViewDelegate
