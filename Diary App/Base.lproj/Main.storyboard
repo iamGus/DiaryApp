@@ -20,11 +20,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" id="xy7-vM-rWh" customClass="EntryCell" customModule="Diary_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="170" id="xy7-vM-rWh" customClass="EntryCell" customModule="Diary_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="170"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xy7-vM-rWh" id="jjo-AB-pLu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_noimage" translatesAutoresizingMaskIntoConstraints="NO" id="TgJ-o5-d1h">
@@ -42,33 +42,30 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6df-vM-YAW" userLabel="Contents View">
-                                            <rect key="frame" x="105" y="20" width="254" height="13"/>
+                                            <rect key="frame" x="105" y="20" width="254" height="139"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday 13th November" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ph3-te-f2X">
-                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <color key="textColor" red="0.22763934731483459" green="0.30315238237380981" blue="0.43397828936576843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-Ic-gac">
-                                                    <rect key="frame" x="0.0" y="28.5" width="254" height="90"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" priority="250" constant="100" id="BnK-dA-xgf"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-Ic-gac">
+                                                    <rect key="frame" x="0.0" y="27.5" width="254" height="84"/>
                                                     <string key="text">Today was a good day, we travelled to an outer part of Bath today to see if we could find some craft beer. The weather was overcast but try and overall, I had a pretty good day.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.22763934729999999" green="0.30315238239999998" blue="0.43397828939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_geolocate" translatesAutoresizingMaskIntoConstraints="NO" id="2k9-gx-1Jb">
-                                                    <rect key="frame" x="0.0" y="126.5" width="20" height="20"/>
+                                                    <rect key="frame" x="0.0" y="119.5" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="9cG-qP-Tj2"/>
                                                         <constraint firstAttribute="width" constant="20" id="yag-fL-WBT"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main street, Bath, UK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOT-XH-aKW">
-                                                    <rect key="frame" x="28" y="131" width="218" height="12"/>
+                                                    <rect key="frame" x="28" y="124" width="218" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -76,12 +73,13 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="2Lo-Ic-gac" secondAttribute="bottom" constant="27.5" id="0ER-uC-2Pn"/>
                                                 <constraint firstAttribute="trailing" secondItem="2Lo-Ic-gac" secondAttribute="trailing" id="2aH-Kr-kQG"/>
                                                 <constraint firstItem="LOT-XH-aKW" firstAttribute="leading" secondItem="2k9-gx-1Jb" secondAttribute="trailing" constant="8" id="3Oh-Us-yMN"/>
                                                 <constraint firstItem="2Lo-Ic-gac" firstAttribute="leading" secondItem="6df-vM-YAW" secondAttribute="leading" id="9Sd-Rg-cjZ"/>
-                                                <constraint firstItem="2k9-gx-1Jb" firstAttribute="top" secondItem="2Lo-Ic-gac" secondAttribute="bottom" constant="8" id="GSC-Z6-kkG"/>
                                                 <constraint firstAttribute="trailing" secondItem="ph3-te-f2X" secondAttribute="trailing" constant="10" id="H0o-Ue-NCE"/>
                                                 <constraint firstAttribute="trailing" secondItem="LOT-XH-aKW" secondAttribute="trailing" constant="8" id="JEf-U3-ESe"/>
+                                                <constraint firstAttribute="bottom" secondItem="2k9-gx-1Jb" secondAttribute="bottom" constant="-0.5" id="N7F-GC-fsk"/>
                                                 <constraint firstItem="2Lo-Ic-gac" firstAttribute="top" secondItem="ph3-te-f2X" secondAttribute="bottom" constant="8" id="Qgx-0N-0hL"/>
                                                 <constraint firstItem="ph3-te-f2X" firstAttribute="leading" secondItem="6df-vM-YAW" secondAttribute="leading" id="WsB-Id-Hxt"/>
                                                 <constraint firstItem="LOT-XH-aKW" firstAttribute="centerY" secondItem="2k9-gx-1Jb" secondAttribute="centerY" id="Z4s-qs-oAo"/>

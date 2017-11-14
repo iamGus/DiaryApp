@@ -21,6 +21,8 @@ class DiaryMasterController: UITableViewController {
         super.viewDidLoad()
         
         tableView.dataSource = dataSource
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 170
     }
     
     // Mark: UITableViewDelegate
@@ -29,9 +31,7 @@ class DiaryMasterController: UITableViewController {
         return .delete
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
+   
     
     // MARK: Navigation
     
