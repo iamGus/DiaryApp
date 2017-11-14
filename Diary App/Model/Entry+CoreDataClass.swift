@@ -23,7 +23,15 @@ public class Entry: NSManagedObject {
         self.mood = 0 //Set mood to 0
     }
     
+    // Format month then year into string
     func dateMonth() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM YYYY"
+        return dateFormatter.string(from: dateCreated as Date)
+    }
+    
+    // Format month then year into string
+    var computedMonth: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM YYYY"
         return dateFormatter.string(from: dateCreated as Date)

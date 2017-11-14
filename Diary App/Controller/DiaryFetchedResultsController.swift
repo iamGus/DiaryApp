@@ -35,6 +35,7 @@ class DiaryFetchedResultsController: NSFetchedResultsController<Entry>, NSFetche
         tableView.beginUpdates()
     }
     
+    // Update cells when there is a change
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
@@ -49,6 +50,7 @@ class DiaryFetchedResultsController: NSFetchedResultsController<Entry>, NSFetche
         }
     }
     
+    // Update section headings when there is a change
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         switch type {
         case .insert:
