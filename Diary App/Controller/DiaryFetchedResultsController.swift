@@ -14,7 +14,7 @@ class DiaryFetchedResultsController: NSFetchedResultsController<Entry>, NSFetche
     
     init(managedObjectContext: NSManagedObjectContext, tableView: UITableView) {
         self.tableView = tableView
-        super.init(fetchRequest: Entry.fetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        super.init(fetchRequest: Entry.fetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: #keyPath(Entry.dateCreated), cacheName: nil)
     
         self.delegate = self
         
@@ -46,6 +46,17 @@ class DiaryFetchedResultsController: NSFetchedResultsController<Entry>, NSFetche
         case .update, .move:
             guard let indexPath = indexPath else { return }
             tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        switch type {
+        case .insert:
+            tableView.insertSections(IndexSet(integer: sectionIndex), with: .automatic)
+        case .delete:
+            tableView.deleteSections(IndexSet(integer: sectionIndex), with: .automatic)
+        default:
+            tableView.reloadSections(IndexSet(integer: sectionIndex), with: .automatic)
         }
     }
     

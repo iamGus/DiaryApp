@@ -34,5 +34,6 @@ extension Entry {
             self.mood = Int16(newValue.rawValue)
         }
     }
+    
 
 }

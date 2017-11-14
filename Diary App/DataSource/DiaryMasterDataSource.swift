@@ -36,6 +36,11 @@ class DiaryMasterDataSource: NSObject, UITableViewDataSource {
         return section.numberOfObjects
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let section = fetchedResultsController.sections?[section] else { return nil }
+        return section.name
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EntryCell.reuseIdentifier, for: indexPath) as! EntryCell

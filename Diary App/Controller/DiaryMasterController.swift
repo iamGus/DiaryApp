@@ -31,6 +31,8 @@ class DiaryMasterController: UITableViewController {
         return .delete
     }
     
+    
+    
    
     
     // MARK: Navigation

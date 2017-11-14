@@ -28,30 +28,30 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_noimage" translatesAutoresizingMaskIntoConstraints="NO" id="TgJ-o5-d1h">
-                                            <rect key="frame" x="10" y="20" width="75" height="75"/>
+                                            <rect key="frame" x="10" y="20" width="70" height="70"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="75" id="YFx-xL-dd4"/>
-                                                <constraint firstAttribute="height" constant="75" id="uel-Ss-86b"/>
+                                                <constraint firstAttribute="width" constant="70" id="YFx-xL-dd4"/>
+                                                <constraint firstAttribute="height" constant="70" id="uel-Ss-86b"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_happy" translatesAutoresizingMaskIntoConstraints="NO" id="yyG-h1-opq">
-                                            <rect key="frame" x="60" y="70" width="25" height="25"/>
+                                            <rect key="frame" x="55" y="65" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="6gd-Ww-Gfq"/>
                                                 <constraint firstAttribute="width" constant="25" id="jJJ-5M-UoP"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6df-vM-YAW" userLabel="Contents View">
-                                            <rect key="frame" x="105" y="20" width="254" height="139"/>
+                                            <rect key="frame" x="100" y="20" width="259" height="139"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday 13th November" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="ph3-te-f2X">
-                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="19.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="249" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <color key="textColor" red="0.22763934731483459" green="0.30315238237380981" blue="0.43397828936576843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-Ic-gac">
-                                                    <rect key="frame" x="0.0" y="27.5" width="254" height="84"/>
+                                                    <rect key="frame" x="0.0" y="27.5" width="259" height="84"/>
                                                     <string key="text">Today was a good day, we travelled to an outer part of Bath today to see if we could find some craft beer. The weather was overcast but try and overall, I had a pretty good day.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.22763934729999999" green="0.30315238239999998" blue="0.43397828939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,7 +65,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main street, Bath, UK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOT-XH-aKW">
-                                                    <rect key="frame" x="28" y="124" width="218" height="12"/>
+                                                    <rect key="frame" x="28" y="124" width="223" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>

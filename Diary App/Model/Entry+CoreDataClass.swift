@@ -16,12 +16,19 @@ public class Entry: NSManagedObject {
     // Set date for when entry created and update edited date when edited.
     public override func awakeFromInsert() {
         
-        // NOTE Wont work yet, see what results I get back from tests
+        
         super.awakeFromInsert()
         self.dateCreated = NSDate()
         self.dateEdited = NSDate()
         self.mood = 0 //Set mood to 0
     }
+    
+    func dateMonth() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM YYYY"
+        return dateFormatter.string(from: dateCreated as Date)
+    }
+ 
 }
 
 enum Mood: Int {
