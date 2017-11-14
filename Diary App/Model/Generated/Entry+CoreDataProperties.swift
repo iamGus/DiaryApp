@@ -26,6 +26,12 @@ extension Entry {
     @NSManaged public var mood: Int16
     @NSManaged public var text: String
     
+    @objc var section: String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM YYYY"
+        return dateFormatter.string(from: dateCreated as Date)
+    }
+    
     var moodStatus: Mood {
         get {
             return Mood(rawValue: Int(self.mood))!
