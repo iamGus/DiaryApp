@@ -78,6 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18369C541FBC72D90019830B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		183FBAA21FB326DD000E0ADC = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +106,7 @@
 		183FBAAD1FB326DD000E0ADC /* Diary App */ = {
 			isa = PBXGroup;
 			children = (
+				18369C541FBC72D90019830B /* Helper */,
 				18ED750F1FB5B2DE007C3A4A /* Controller */,
 				18F43D541FB9D51400C31E2A /* View Model */,
 				18F43D571FB9D54B00C31E2A /* Views */,

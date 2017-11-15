@@ -249,7 +249,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dF7-gX-s0S">
                                         <rect key="frame" x="305.5" y="169" width="8" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="11"/>
-                                        <color key="textColor" red="0.48991495369999999" green="0.60999268289999997" blue="0.3572758734" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.49019607843137253" green="0.61176470588235299" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

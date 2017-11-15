@@ -31,7 +31,12 @@ class NewEntryController: UIViewController {
  
     @IBAction func save(_ sender: Any) {
         
-        guard let text = textField.text, !text.isEmpty else { return /* Note return popup of empty text */ } 
+        guard let text = textField.text, !text.isEmpty else { return /* Note return popup of empty text */ }
+        
+        // Check characters entered in text field
+        if textField.text.count > 200 {
+            return print("Sorry you have exceeded the count")
+        }
         
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as! Entry
         
@@ -62,5 +67,10 @@ class NewEntryController: UIViewController {
 extension NewEntryController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         textFieldCountLabel.text = String(textField.text.count)
+        if textField.text.count <= 200 {
+            textFieldCountLabel.textColor = UIColor.init(red: 125/255, green: 156/255, blue: 91/255, alpha: 1)
+        } else {
+            textFieldCountLabel.textColor = UIColor.red
+        }
     }
 }
