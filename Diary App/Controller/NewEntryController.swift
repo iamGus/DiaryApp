@@ -31,11 +31,15 @@ class NewEntryController: UIViewController {
  
     @IBAction func save(_ sender: Any) {
         
-        guard let text = textField.text, !text.isEmpty else { return /* Note return popup of empty text */ }
+        guard let text = textField.text, !text.isEmpty else {
+            self.showAlert(title: "Alert", message: "You cannot save a entry with text, please first enter text")
+            return
+        }
         
         // Check characters entered in text field
         if textField.text.count > 200 {
-            return print("Sorry you have exceeded the count")
+            self.showAlert(title: "Alert", message: "Your text exceeds the 200 characters limit, please shorten")
+            return
         }
         
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as! Entry
@@ -63,6 +67,7 @@ class NewEntryController: UIViewController {
     */
 
 }
+
 // UITableView delegate - Update count
 extension NewEntryController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
