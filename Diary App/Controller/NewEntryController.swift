@@ -12,18 +12,22 @@ import CoreData
 class NewEntryController: UIViewController {
     
     @IBOutlet weak var textField: UITextView!
+    @IBOutlet weak var textFieldCountLabel: UILabel!
     
     var managedObjectContext: NSManagedObjectContext!
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        textField.delegate = self
 
         // Do any additional setup after loading the view.
     }
-
+    @objc static func didEnterText() {
+        print("wohoo")
+    }
  
     @IBAction func save(_ sender: Any) {
         
@@ -53,4 +57,10 @@ class NewEntryController: UIViewController {
     }
     */
 
+}
+// UITableView delegate - Update count
+extension NewEntryController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        textFieldCountLabel.text = String(textField.text.count)
+    }
 }

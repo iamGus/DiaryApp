@@ -329,6 +329,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="textField" destination="vZm-ze-wmd" id="Cwu-7r-g8R"/>
+                        <outlet property="textFieldCountLabel" destination="dF7-gX-s0S" id="cFX-k2-F5p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEw-ki-WET" userLabel="First Responder" sceneMemberID="firstResponder"/>
