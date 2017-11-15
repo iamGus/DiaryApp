@@ -32,7 +32,7 @@ class NewEntryController: UIViewController {
     @IBAction func save(_ sender: Any) {
         
         guard let text = textField.text, !text.isEmpty else {
-            self.showAlert(title: "Alert", message: "You cannot save a entry with text, please first enter text")
+            self.showAlert(title: "Alert", message: "You cannot save an entry without text, please first enter text")
             return
         }
         
