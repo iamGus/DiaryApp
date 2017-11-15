@@ -13,6 +13,7 @@
 		183FBAB91FB326DD000E0ADC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183FBAB71FB326DD000E0ADC /* LaunchScreen.storyboard */; };
 		183FBAC41FB326DD000E0ADC /* Diary_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FBAC31FB326DD000E0ADC /* Diary_AppTests.swift */; };
 		183FBACF1FB33CE6000E0ADC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FBACE1FB33CE6000E0ADC /* CoreDataStack.swift */; };
+		18532F921FBC2D91001B2DBC /* UITextFieldLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18532F911FBC2D91001B2DBC /* UITextFieldLines.swift */; };
 		18E3DE431FB3489000A6A011 /* Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18E3DE411FB3489000A6A011 /* Diary.xcdatamodeld */; };
 		18ED75061FB5A662007C3A4A /* NewEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED75051FB5A662007C3A4A /* NewEntryController.swift */; };
 		18ED75081FB5A68D007C3A4A /* ViewEditEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED75071FB5A68D007C3A4A /* ViewEditEntryController.swift */; };
@@ -46,6 +47,7 @@
 		183FBAC31FB326DD000E0ADC /* Diary_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary_AppTests.swift; sourceTree = "<group>"; };
 		183FBAC51FB326DD000E0ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183FBACE1FB33CE6000E0ADC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		18532F911FBC2D91001B2DBC /* UITextFieldLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldLines.swift; sourceTree = "<group>"; };
 		18E3DE421FB3489000A6A011 /* Diary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Diary.xcdatamodel; sourceTree = "<group>"; };
 		18ED75051FB5A662007C3A4A /* NewEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryController.swift; sourceTree = "<group>"; };
 		18ED75071FB5A68D007C3A4A /* ViewEditEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEditEntryController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				183FBAB71FB326DD000E0ADC /* LaunchScreen.storyboard */,
 				183FBABA1FB326DD000E0ADC /* Info.plist */,
 				18E3DE411FB3489000A6A011 /* Diary.xcdatamodeld */,
+				18532F911FBC2D91001B2DBC /* UITextFieldLines.swift */,
 			);
 			path = "Diary App";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				18F43D531FB9B6B200C31E2A /* DiaryMasterDataSource.swift in Sources */,
 				183FBACF1FB33CE6000E0ADC /* CoreDataStack.swift in Sources */,
+				18532F921FBC2D91001B2DBC /* UITextFieldLines.swift in Sources */,
 				18ED75081FB5A68D007C3A4A /* ViewEditEntryController.swift in Sources */,
 				18ED750B1FB5AA33007C3A4A /* Entry+CoreDataClass.swift in Sources */,
 				18F43D591FB9D57D00C31E2A /* EntryCell.swift in Sources */,
