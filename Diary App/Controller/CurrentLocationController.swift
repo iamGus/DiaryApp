@@ -57,9 +57,17 @@ class CurrentLocationController: UIViewController {
 
 // MARK: - Location Manager Delegate
 extension CurrentLocationController: LocationManagerDelegate {
-    func obtainedCoordinates(_ coordinate: Coordinate) {
-        self.coordinate = coordinate
-        print(coordinate)
+    func obtainedCoordinates(_ coordinate: CLLocation) {
+        
+        locationManager.getPlacemark(forLocation: coordinate) { (originPlacemark, error) in
+            if let error = error {
+                print(error) //NOTE: need to deal with this
+            } else if let placemark = originPlacemark?.locality {
+                print(placemark)
+            } else {
+                // No text data for locality, return to view and show popup
+            }
+        }
        
     }
     

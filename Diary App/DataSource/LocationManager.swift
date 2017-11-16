@@ -29,7 +29,7 @@ protocol LocationPermissionsDelegate: class {
 }
 
 protocol LocationManagerDelegate: class {
-    func obtainedCoordinates(_ location: Coordinate)
+    func obtainedCoordinates(_ location: CLLocation)
     func failedWithError(_ error: LocationError)
 }
 
@@ -96,9 +96,29 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             return
         }
         
-        let coordinate = Coordinate(location: location)
+        // Send location cordidnates to CurrentLocationController
+        delegate?.obtainedCoordinates(location)
+    }
+    
+    func getPlacemark(forLocation location: CLLocation, completionHandler: @escaping (CLPlacemark?, String?) -> ()) {
+        let geocoder = CLGeocoder()
         
-        delegate?.obtainedCoordinates(coordinate)
+        geocoder.reverseGeocodeLocation(location, completionHandler: {
+            placemarks, error in
+            
+            if let err = error {
+                completionHandler(nil, err.localizedDescription)
+            } else if let placemarkArray = placemarks {
+                if let placemark = placemarkArray.first {
+                    completionHandler(placemark, nil)
+                } else {
+                    completionHandler(nil, "Placemark was nil")
+                }
+            } else {
+                completionHandler(nil, "Unknown error")
+            }
+        })
+        
     }
     
 }
