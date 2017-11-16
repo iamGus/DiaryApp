@@ -15,6 +15,10 @@
 		183FBAC41FB326DD000E0ADC /* Diary_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FBAC31FB326DD000E0ADC /* Diary_AppTests.swift */; };
 		183FBACF1FB33CE6000E0ADC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183FBACE1FB33CE6000E0ADC /* CoreDataStack.swift */; };
 		18532F921FBC2D91001B2DBC /* UITextFieldLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18532F911FBC2D91001B2DBC /* UITextFieldLines.swift */; };
+		188FCDFA1FBD89A60081E55D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FCDF91FBD89A60081E55D /* LocationManager.swift */; };
+		188FCDFC1FBD9C230081E55D /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FCDFB1FBD9C230081E55D /* Coordinate.swift */; };
+		188FCDFF1FBDA1480081E55D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188FCDFE1FBDA10C0081E55D /* CoreLocation.framework */; };
+		188FCE011FBDA64A0081E55D /* CurrentLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FCE001FBDA64A0081E55D /* CurrentLocationController.swift */; };
 		18E3DE431FB3489000A6A011 /* Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18E3DE411FB3489000A6A011 /* Diary.xcdatamodeld */; };
 		18ED75061FB5A662007C3A4A /* NewEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED75051FB5A662007C3A4A /* NewEntryController.swift */; };
 		18ED75081FB5A68D007C3A4A /* ViewEditEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED75071FB5A68D007C3A4A /* ViewEditEntryController.swift */; };
@@ -50,6 +54,10 @@
 		183FBAC51FB326DD000E0ADC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		183FBACE1FB33CE6000E0ADC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		18532F911FBC2D91001B2DBC /* UITextFieldLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldLines.swift; sourceTree = "<group>"; };
+		188FCDF91FBD89A60081E55D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		188FCDFB1FBD9C230081E55D /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		188FCDFE1FBDA10C0081E55D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		188FCE001FBDA64A0081E55D /* CurrentLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationController.swift; sourceTree = "<group>"; };
 		18E3DE421FB3489000A6A011 /* Diary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Diary.xcdatamodel; sourceTree = "<group>"; };
 		18ED75051FB5A662007C3A4A /* NewEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryController.swift; sourceTree = "<group>"; };
 		18ED75071FB5A68D007C3A4A /* ViewEditEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEditEntryController.swift; sourceTree = "<group>"; };
@@ -67,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188FCDFF1FBDA1480081E55D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +103,7 @@
 				183FBAAD1FB326DD000E0ADC /* Diary App */,
 				183FBAC21FB326DD000E0ADC /* Diary AppTests */,
 				183FBAAC1FB326DD000E0ADC /* Products */,
+				188FCDFD1FBDA10B0081E55D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,11 +145,20 @@
 			path = "Diary AppTests";
 			sourceTree = "<group>";
 		};
+		188FCDFD1FBDA10B0081E55D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				188FCDFE1FBDA10C0081E55D /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18E3DE441FB348A200A6A011 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
 				183FBACE1FB33CE6000E0ADC /* CoreDataStack.swift */,
 				18F43D521FB9B6B200C31E2A /* DiaryMasterDataSource.swift */,
+				188FCDF91FBD89A60081E55D /* LocationManager.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -147,6 +166,7 @@
 		18ED750D1FB5B286007C3A4A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				188FCDFB1FBD9C230081E55D /* Coordinate.swift */,
 				18ED75091FB5AA33007C3A4A /* Entry+CoreDataClass.swift */,
 				18ED750E1FB5B297007C3A4A /* Generated */,
 			);
@@ -168,6 +188,7 @@
 				18F43D501FB99D7000C31E2A /* DiaryFetchedResultsController.swift */,
 				18ED75051FB5A662007C3A4A /* NewEntryController.swift */,
 				18ED75071FB5A68D007C3A4A /* ViewEditEntryController.swift */,
+				188FCE001FBDA64A0081E55D /* CurrentLocationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,8 +314,11 @@
 			files = (
 				18F43D531FB9B6B200C31E2A /* DiaryMasterDataSource.swift in Sources */,
 				18369C561FBC75B10019830B /* Helper.swift in Sources */,
+				188FCDFA1FBD89A60081E55D /* LocationManager.swift in Sources */,
+				188FCDFC1FBD9C230081E55D /* Coordinate.swift in Sources */,
 				183FBACF1FB33CE6000E0ADC /* CoreDataStack.swift in Sources */,
 				18532F921FBC2D91001B2DBC /* UITextFieldLines.swift in Sources */,
+				188FCE011FBDA64A0081E55D /* CurrentLocationController.swift in Sources */,
 				18ED75081FB5A68D007C3A4A /* ViewEditEntryController.swift in Sources */,
 				18ED750B1FB5AA33007C3A4A /* Entry+CoreDataClass.swift in Sources */,
 				18F43D591FB9D57D00C31E2A /* EntryCell.swift in Sources */,
