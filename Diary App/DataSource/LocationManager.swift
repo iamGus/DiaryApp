@@ -69,9 +69,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        // status is not Determined so when status chnages check:
         if status == .authorizedWhenInUse {
             permissionsDelegate?.authorizationSucceeded()
-        } else {
+        } else if status == .denied || status == .restricted {
+            print("calling didchangeauth")
             permissionsDelegate?.authorizationFailedWithStatus(status)
         }
     }

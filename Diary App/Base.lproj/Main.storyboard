@@ -331,6 +331,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addLocationButtonLabel" destination="AdE-QG-0no" id="nJe-dO-wcY"/>
                         <outlet property="textField" destination="vZm-ze-wmd" id="Cwu-7r-g8R"/>
                         <outlet property="textFieldCountLabel" destination="dF7-gX-s0S" id="cFX-k2-F5p"/>
                     </connections>
@@ -349,8 +350,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Nof-EP-8tb"/>
                     </view>
+                    <connections>
+                        <segue destination="svL-eX-Pcu" kind="unwind" identifier="unwindFromLocation" unwindAction="unwindFromLocationVC:" id="T1H-lO-7Ek"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zrp-h5-y0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="svL-eX-Pcu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2575" y="699"/>
         </scene>

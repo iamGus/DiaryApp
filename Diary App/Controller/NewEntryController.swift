@@ -14,8 +14,9 @@ class NewEntryController: UIViewController {
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var textFieldCountLabel: UILabel!
     
+    @IBOutlet weak var addLocationButtonLabel: UIButton!
     var managedObjectContext: NSManagedObjectContext!
-    
+    var locationText: String? // Store location from Location VC
     
 
     override func viewDidLoad() {
@@ -42,9 +43,16 @@ class NewEntryController: UIViewController {
             return
         }
         
+    
+        
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as! Entry
         
         entry.text = text
+        
+        // Check if locationText property has text, if it does then put into entry
+        if let locationText = locationText {
+            entry.location = locationText
+        }
         
         managedObjectContext.saveChanges()
         
@@ -65,6 +73,18 @@ class NewEntryController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // Unwinde From CurrentLocationController
+    @IBAction func unwindFromLocationVC(_ sender: UIStoryboardSegue) {
+        if sender.source is CurrentLocationController {
+            if let senderVC = sender.source as? CurrentLocationController {
+                if let senderVCLocationText = senderVC.locationText {
+                    self.locationText = senderVCLocationText
+                    addLocationButtonLabel.setTitle(senderVCLocationText, for: .normal) //loaction button text update
+                }
+            }
+        }
+    }
 
 }
 
