@@ -15,8 +15,26 @@ class NewEntryController: UIViewController {
     @IBOutlet weak var textFieldCountLabel: UILabel!
     
     @IBOutlet weak var addLocationButtonLabel: UIButton!
+    
+    @IBOutlet weak var badButtonLabel: UIButton!
+    @IBOutlet weak var averageButtonLabel: UIButton!
+    @IBOutlet weak var goodButtonLabel: UIButton!
+    @IBOutlet weak var moodIcon: UIImageView!
+    
+    
     var managedObjectContext: NSManagedObjectContext!
     var locationText: String? // Store location from Location VC
+    var mood: Mood = .none {
+        didSet {
+            // Set mood icon
+            switch self.mood {
+            case .none: moodIcon.image = nil
+            case .happy: moodIcon.image = #imageLiteral(resourceName: "icn_happy")
+            case .average: moodIcon.image = #imageLiteral(resourceName: "icn_average")
+            case .bad: moodIcon.image = #imageLiteral(resourceName: "icn_bad")
+            }
+        }
+    }
     
 
     override func viewDidLoad() {
@@ -45,9 +63,16 @@ class NewEntryController: UIViewController {
         
     
         
+    
+        
         let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as! Entry
         
         entry.text = text
+        
+        // Check if mood selected, if there is one then put into entry
+        if mood != .none {
+            entry.moodStatus = mood
+        }
         
         // Check if locationText property has text, if it does then put into entry
         if let locationText = locationText {
@@ -85,6 +110,17 @@ class NewEntryController: UIViewController {
             }
         }
     }
+    
+    @IBAction func moodButtonAction(_ sender: UIButton) {
+        switch sender {
+        case badButtonLabel:
+            mood = .bad
+        case averageButtonLabel: mood = .average
+        case goodButtonLabel: mood = .happy
+        default: mood = .none
+        }
+    }
+    
 
 }
 

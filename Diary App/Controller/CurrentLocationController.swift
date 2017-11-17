@@ -62,7 +62,7 @@ extension CurrentLocationController: LocationManagerDelegate {
     func obtainedCoordinates(_ coordinate: CLLocation) {
         
         locationManager.getPlacemark(forLocation: coordinate) { (originPlacemark, error) in
-            if let placemark = originPlacemark?.inlandWater {
+            if let placemark = originPlacemark?.locality {
                 
                 self.locationText = placemark
                 self.performSegue(withIdentifier: "unwindFromLocation", sender: self)

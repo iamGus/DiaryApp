@@ -210,6 +210,13 @@
                                             <constraint firstAttribute="height" constant="70" id="jBm-1P-NnK"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cdL-bm-jXS">
+                                        <rect key="frame" x="60" y="45" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="MPc-Wf-pEm"/>
+                                            <constraint firstAttribute="width" constant="25" id="jF5-T0-tsg"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday 13th November" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="n7z-f7-wyO">
                                         <rect key="frame" x="100" y="0.0" width="184" height="19.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -269,6 +276,7 @@
                                     <constraint firstItem="AdE-QG-0no" firstAttribute="top" secondItem="vZm-ze-wmd" secondAttribute="bottom" constant="8" id="AnN-Sz-oVJ"/>
                                     <constraint firstItem="n7z-f7-wyO" firstAttribute="leading" secondItem="JFn-rz-q2p" secondAttribute="trailing" constant="15" id="KSk-ah-5gp"/>
                                     <constraint firstItem="gLJ-3n-AcN" firstAttribute="leading" secondItem="vZm-ze-wmd" secondAttribute="leading" id="Lyu-kT-Goc"/>
+                                    <constraint firstItem="cdL-bm-jXS" firstAttribute="bottom" secondItem="JFn-rz-q2p" secondAttribute="bottom" id="Oi9-cp-L9g"/>
                                     <constraint firstItem="gLJ-3n-AcN" firstAttribute="top" secondItem="vZm-ze-wmd" secondAttribute="bottom" constant="10" id="SxP-iu-AiW"/>
                                     <constraint firstItem="vZm-ze-wmd" firstAttribute="leading" secondItem="n7z-f7-wyO" secondAttribute="leading" id="VJg-DO-rvJ"/>
                                     <constraint firstItem="AdE-QG-0no" firstAttribute="leading" secondItem="gLJ-3n-AcN" secondAttribute="trailing" constant="8" id="Xxn-ct-QTw"/>
@@ -277,6 +285,7 @@
                                     <constraint firstAttribute="trailing" secondItem="vZm-ze-wmd" secondAttribute="trailing" constant="35" id="eKH-uP-Xy7"/>
                                     <constraint firstItem="FCB-3U-tV3" firstAttribute="centerY" secondItem="gLJ-3n-AcN" secondAttribute="centerY" id="kOG-DF-ozv"/>
                                     <constraint firstItem="n7z-f7-wyO" firstAttribute="top" secondItem="gvV-EI-y2f" secondAttribute="top" id="lHB-tV-HFz"/>
+                                    <constraint firstItem="cdL-bm-jXS" firstAttribute="trailing" secondItem="JFn-rz-q2p" secondAttribute="trailing" id="qAD-Ms-cWt"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="T1n-0s-0lF">
@@ -288,6 +297,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Bad" image="icn_bad_lrg"/>
+                                        <connections>
+                                            <action selector="moodButtonAction:" destination="t8X-po-tDA" eventType="touchUpInside" id="F3y-XA-zH6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZn-wg-lK2">
                                         <rect key="frame" x="125" y="0.0" width="125" height="45"/>
@@ -295,6 +307,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Average" image="icn_average_lrg"/>
+                                        <connections>
+                                            <action selector="moodButtonAction:" destination="t8X-po-tDA" eventType="touchUpInside" id="TwK-a6-I0i"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LX0-Iz-Jfu">
                                         <rect key="frame" x="250" y="0.0" width="125" height="45"/>
@@ -302,6 +317,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Good" image="icn_good_lrg"/>
+                                        <connections>
+                                            <action selector="moodButtonAction:" destination="t8X-po-tDA" eventType="touchUpInside" id="Q6D-l8-osb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -332,6 +350,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addLocationButtonLabel" destination="AdE-QG-0no" id="nJe-dO-wcY"/>
+                        <outlet property="averageButtonLabel" destination="zZn-wg-lK2" id="NUq-Y6-oVX"/>
+                        <outlet property="badButtonLabel" destination="SFP-FL-VkN" id="0HH-yH-LPH"/>
+                        <outlet property="goodButtonLabel" destination="LX0-Iz-Jfu" id="f1f-jM-1tn"/>
+                        <outlet property="moodIcon" destination="cdL-bm-jXS" id="6fY-XX-y4l"/>
                         <outlet property="textField" destination="vZm-ze-wmd" id="Cwu-7r-g8R"/>
                         <outlet property="textFieldCountLabel" destination="dF7-gX-s0S" id="cFX-k2-F5p"/>
                     </connections>
@@ -347,7 +369,20 @@
                     <view key="view" contentMode="scaleToFill" id="oUU-qa-9ea">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cJ6-RG-s9i">
+                                <rect key="frame" x="157" y="303" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0ZU-xu-Ute"/>
+                                    <constraint firstAttribute="width" constant="60" id="KnS-cl-LU2"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cJ6-RG-s9i" firstAttribute="centerX" secondItem="oUU-qa-9ea" secondAttribute="centerX" id="pLx-kb-jau"/>
+                            <constraint firstItem="cJ6-RG-s9i" firstAttribute="centerY" secondItem="oUU-qa-9ea" secondAttribute="centerY" id="rX7-R1-Gzu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Nof-EP-8tb"/>
                     </view>
                     <connections>
