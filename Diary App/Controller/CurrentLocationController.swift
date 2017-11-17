@@ -62,16 +62,14 @@ extension CurrentLocationController: LocationManagerDelegate {
     func obtainedCoordinates(_ coordinate: CLLocation) {
         
         locationManager.getPlacemark(forLocation: coordinate) { (originPlacemark, error) in
-            if let error = error {
-                print(error) //NOTE: need to deal with this
-                
-            } else if let placemark = originPlacemark?.locality {
+            if let placemark = originPlacemark?.inlandWater {
                 
                 self.locationText = placemark
                 self.performSegue(withIdentifier: "unwindFromLocation", sender: self)
                 
             } else {
-                // No text data for locality, return to view and show popup
+                // No text data for locality, show message to user and return to view
+                self.locationFailedAlert()
             }
         }
        
@@ -79,6 +77,21 @@ extension CurrentLocationController: LocationManagerDelegate {
     
     func failedWithError(_ error: LocationError) {
         print(error)
+        locationFailedAlert()
+    }
+    
+    // When cannot get location this is called to alert user and take them back to underlying VC
+    func locationFailedAlert() {
+        let alertController = UIAlertController(title: "Location Error", message: "Sorry, unable to get your location at this time!", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) {
+            UIAlertAction in
+            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
+        }
+        alertController.addAction(okAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

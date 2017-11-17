@@ -34,6 +34,13 @@ class EntryCell: UITableViewCell {
         dateTitleLabel.text = viewModel.dateTitle
         entryTextLabel.text = viewModel.text
         
+        if let location = viewModel.location {
+            locationTextLabel.text = location
+        } else {
+            // Hide location elements as there is no location text
+            
+        }
+        
         // Set mood icon
         switch viewModel.mood {
         case .none: moodIcon.image = nil
