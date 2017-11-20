@@ -222,26 +222,42 @@
                                         <color key="textColor" red="0.49019607843137253" green="0.61176470588235299" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzO-VI-Noc">
+                                        <rect key="frame" x="100" y="193" width="48.5" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday 13th November" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-3q-qdp">
+                                        <rect key="frame" x="156" y="193.5" width="124.5" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="0NS-nY-3vN"/>
                                     <constraint firstItem="dF7-gX-s0S" firstAttribute="centerY" secondItem="gLJ-3n-AcN" secondAttribute="centerY" id="1oF-ha-TBn"/>
                                     <constraint firstItem="JFn-rz-q2p" firstAttribute="leading" secondItem="gvV-EI-y2f" secondAttribute="leading" constant="15" id="2JN-W3-DBJ"/>
+                                    <constraint firstItem="DzO-VI-Noc" firstAttribute="leading" secondItem="vZm-ze-wmd" secondAttribute="leading" id="2Lv-za-rga"/>
                                     <constraint firstItem="FCB-3U-tV3" firstAttribute="trailing" secondItem="vZm-ze-wmd" secondAttribute="trailing" id="2eJ-GH-PDb"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="n7z-f7-wyO" secondAttribute="trailing" constant="20" symbolic="YES" id="3u6-U7-l0c"/>
                                     <constraint firstItem="vZm-ze-wmd" firstAttribute="top" secondItem="n7z-f7-wyO" secondAttribute="bottom" constant="8" id="4ND-kk-4R2"/>
                                     <constraint firstItem="JFn-rz-q2p" firstAttribute="top" secondItem="gvV-EI-y2f" secondAttribute="top" id="4QK-dk-Sd3"/>
                                     <constraint firstItem="FCB-3U-tV3" firstAttribute="leading" secondItem="dF7-gX-s0S" secondAttribute="trailing" constant="2" id="8R4-6A-PPy"/>
                                     <constraint firstItem="AdE-QG-0no" firstAttribute="top" secondItem="vZm-ze-wmd" secondAttribute="bottom" constant="8" id="AnN-Sz-oVJ"/>
+                                    <constraint firstItem="gwe-3q-qdp" firstAttribute="leading" secondItem="DzO-VI-Noc" secondAttribute="trailing" constant="7.5" id="FDr-jA-66n"/>
                                     <constraint firstItem="n7z-f7-wyO" firstAttribute="leading" secondItem="JFn-rz-q2p" secondAttribute="trailing" constant="15" id="KSk-ah-5gp"/>
                                     <constraint firstItem="gLJ-3n-AcN" firstAttribute="leading" secondItem="vZm-ze-wmd" secondAttribute="leading" id="Lyu-kT-Goc"/>
                                     <constraint firstItem="cdL-bm-jXS" firstAttribute="bottom" secondItem="JFn-rz-q2p" secondAttribute="bottom" id="Oi9-cp-L9g"/>
                                     <constraint firstItem="gLJ-3n-AcN" firstAttribute="top" secondItem="vZm-ze-wmd" secondAttribute="bottom" constant="10" id="SxP-iu-AiW"/>
                                     <constraint firstItem="vZm-ze-wmd" firstAttribute="leading" secondItem="n7z-f7-wyO" secondAttribute="leading" id="VJg-DO-rvJ"/>
+                                    <constraint firstItem="gwe-3q-qdp" firstAttribute="centerY" secondItem="DzO-VI-Noc" secondAttribute="centerY" id="Xfs-1B-8ZQ"/>
                                     <constraint firstItem="AdE-QG-0no" firstAttribute="leading" secondItem="gLJ-3n-AcN" secondAttribute="trailing" constant="8" id="Xxn-ct-QTw"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AdE-QG-0no" secondAttribute="trailing" constant="20" symbolic="YES" id="Y9a-o3-b6e"/>
                                     <constraint firstItem="AdE-QG-0no" firstAttribute="centerY" secondItem="gLJ-3n-AcN" secondAttribute="centerY" id="b8b-03-spx"/>
+                                    <constraint firstItem="DzO-VI-Noc" firstAttribute="top" secondItem="AdE-QG-0no" secondAttribute="bottom" constant="6" id="ckk-X8-cTn"/>
                                     <constraint firstAttribute="trailing" secondItem="vZm-ze-wmd" secondAttribute="trailing" constant="35" id="eKH-uP-Xy7"/>
                                     <constraint firstItem="FCB-3U-tV3" firstAttribute="centerY" secondItem="gLJ-3n-AcN" secondAttribute="centerY" id="kOG-DF-ozv"/>
                                     <constraint firstItem="n7z-f7-wyO" firstAttribute="top" secondItem="gvV-EI-y2f" secondAttribute="top" id="lHB-tV-HFz"/>
@@ -314,6 +330,8 @@
                         <outlet property="badButtonLabel" destination="SFP-FL-VkN" id="0HH-yH-LPH"/>
                         <outlet property="dateHeadingLabel" destination="n7z-f7-wyO" id="ZQb-1o-6dd"/>
                         <outlet property="goodButtonLabel" destination="LX0-Iz-Jfu" id="f1f-jM-1tn"/>
+                        <outlet property="lastUpdatedDateLabel" destination="gwe-3q-qdp" id="a0I-iS-iVD"/>
+                        <outlet property="lastUpdatedHeadingLabel" destination="DzO-VI-Noc" id="pxa-Pt-2a7"/>
                         <outlet property="monthTopHeadingLabel" destination="EhR-6v-ZSw" id="n7g-Xj-2oB"/>
                         <outlet property="moodIcon" destination="cdL-bm-jXS" id="6fY-XX-y4l"/>
                         <outlet property="textField" destination="vZm-ze-wmd" id="Cwu-7r-g8R"/>

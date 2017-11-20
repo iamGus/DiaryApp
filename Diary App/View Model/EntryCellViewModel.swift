@@ -19,10 +19,8 @@ extension EntryCellViewModel {
     init(entry: Entry) {
         // Format date for date title
         self.dateTitle = Helper.titleDate(date: entry.dateCreated)
-        
         self.text = entry.text
         self.mood = entry.moodStatus
-        print(self.mood)
         self.location = entry.location
     }
 }

@@ -20,6 +20,10 @@ class DetailEntryController: UIViewController {
     @IBOutlet weak var averageButtonLabel: UIButton!
     @IBOutlet weak var goodButtonLabel: UIButton!
     @IBOutlet weak var moodIcon: UIImageView!
+    @IBOutlet weak var lastUpdatedHeadingLabel: UILabel!
+    @IBOutlet weak var lastUpdatedDateLabel: UILabel!
+    
+    
     
     // Properties
     var managedObjectContext: NSManagedObjectContext!
@@ -50,14 +54,20 @@ class DetailEntryController: UIViewController {
             textViewDidChange(textField)
             dateHeadingLabel.text = Helper.titleDate(date: currentEntry.dateCreated)
             monthTopHeadingLabel.text = Helper.detailTopDate(date: currentEntry.dateCreated)
+            if let dateEdited = currentEntry.dateEdited {
+                lastUpdatedDateLabel.text = Helper.titleDate(date: dateEdited)
+            }
             if let location = currentEntry.location {
                 addLocationButtonLabel.setTitle(location, for: .normal)
             }
+        
         } else {
             // New entry
             // Set Date title to todays date
             dateHeadingLabel.text = Helper.titleDate()
             monthTopHeadingLabel.text = Helper.detailTopDate()
+            lastUpdatedHeadingLabel.isHidden = true
+            lastUpdatedDateLabel.isHidden = true
         }
         
     }
@@ -91,6 +101,9 @@ class DetailEntryController: UIViewController {
                 currentEntry.location = locationText
                 print("In current entry")
             }
+            
+            // Updated date edited date to todays date
+            currentEntry.dateEdited = NSDate()
             
         } else { // Else it must be a new entry
             let newEntry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as! Entry
