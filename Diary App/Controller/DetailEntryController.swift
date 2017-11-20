@@ -1,5 +1,5 @@
 //
-//  NewEntryController.swift
+//  DetailEntryController.swift
 //  Diary App
 //
 //  Created by Angus Muller on 10/11/2017.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewEntryController: UIViewController {
+class DetailEntryController: UIViewController {
     
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var textFieldCountLabel: UILabel!
@@ -138,7 +138,7 @@ class NewEntryController: UIViewController {
 }
 
 // UITableView delegate - Update count
-extension NewEntryController: UITextViewDelegate {
+extension DetailEntryController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         textFieldCountLabel.text = String(textField.text.count)
         if textField.text.count <= 200 {

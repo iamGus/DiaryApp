@@ -46,10 +46,10 @@ class DiaryMasterController: UITableViewController {
     // NOTE: The managedObjectContext instance on NewEntryController is using dependency Injection so is using same as MasterDetail. May need to change to singleton object depending on how using seperate view for cell.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newEntry" {
-            let newEntryController = segue.destination as! NewEntryController
+            let newEntryController = segue.destination as! DetailEntryController
             newEntryController.managedObjectContext = self.managedObjectContext // send referance of context
         } else if segue.identifier == "showDetail" {
-            guard let detailsViewController = segue.destination as? NewEntryController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard let detailsViewController = segue.destination as? DetailEntryController, let indexPath = tableView.indexPathForSelectedRow else { return }
             
             let entry = dataSource.object(at: indexPath)
             detailsViewController.currentEntry = entry // pass over selected entry data

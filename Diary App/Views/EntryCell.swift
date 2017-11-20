@@ -37,11 +37,14 @@ class EntryCell: UITableViewCell {
         
         if let location = viewModel.location {
             locationTextLabel.text = location
+            locationIcon.isHidden = false
+            locationTextLabel.isHidden = false
+            contentsViewBottomConstraint.constant = 27.5
         } else {
             // Hide location elements as there is no location text
             locationIcon.isHidden = true
             locationTextLabel.isHidden = true
-            contentsViewBottomConstraint.constant = 0
+            contentsViewBottomConstraint.constant = 5 // So there is no gap where lcoation elements did show
         }
         
         // Set mood icon

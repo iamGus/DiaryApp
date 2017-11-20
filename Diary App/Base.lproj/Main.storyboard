@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="770.39999999999998" y="116.49175412293854"/>
         </scene>
-        <!--New Entry Controller-->
+        <!--Detail Entry Controller-->
         <scene sceneID="txI-6k-jls">
             <objects>
-                <viewController id="t8X-po-tDA" customClass="NewEntryController" customModule="Diary_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="t8X-po-tDA" customClass="DetailEntryController" customModule="Diary_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2TC-Cu-Ksd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
