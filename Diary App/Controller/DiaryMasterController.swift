@@ -39,7 +39,7 @@ class DiaryMasterController: UITableViewController {
     
     
     
-   
+   //NOTE - check below guard let error handling
     
     // MARK: Navigation
     
@@ -49,11 +49,11 @@ class DiaryMasterController: UITableViewController {
             let newEntryController = segue.destination as! NewEntryController
             newEntryController.managedObjectContext = self.managedObjectContext // send referance of context
         } else if segue.identifier == "showDetail" {
-            guard let detailsViewController = segue.destination as? ViewEditEntryController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard let detailsViewController = segue.destination as? NewEntryController, let indexPath = tableView.indexPathForSelectedRow else { return }
             
             let entry = dataSource.object(at: indexPath)
-            detailsViewController.entry = entry // pass over selected entry data
-            detailsViewController.context = self.managedObjectContext // send referance of context
+            detailsViewController.currentEntry = entry // pass over selected entry data
+            detailsViewController.managedObjectContext = self.managedObjectContext // send referance of context
         }
     }
 

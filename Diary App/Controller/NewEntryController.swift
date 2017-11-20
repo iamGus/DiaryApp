@@ -16,6 +16,8 @@ class NewEntryController: UIViewController {
     
     @IBOutlet weak var addLocationButtonLabel: UIButton!
     
+    @IBOutlet weak var monthTopHeadingLabel: NSLayoutConstraint!
+    @IBOutlet weak var dateHeadingLabel: UILabel!
     @IBOutlet weak var badButtonLabel: UIButton!
     @IBOutlet weak var averageButtonLabel: UIButton!
     @IBOutlet weak var goodButtonLabel: UIButton!
@@ -23,6 +25,7 @@ class NewEntryController: UIViewController {
     
     
     var managedObjectContext: NSManagedObjectContext!
+    var currentEntry: Entry? // If viewing current entry master VC passes entry to here
     var locationText: String? // Store location from Location VC
     var mood: Mood = .none {
         didSet {
@@ -42,14 +45,20 @@ class NewEntryController: UIViewController {
         
         textField.delegate = self
 
-        // Do any additional setup after loading the view.
+        // Check if this is an existing entry or a new entry. If exisiting then populate fields:
+        if let currentEntry = currentEntry {
+            textField.text = currentEntry.text
+            mood = currentEntry.moodStatus
+        }
+        
     }
     @objc static func didEnterText() {
         print("wohoo")
     }
- 
+    // Saving changes or adding new entry
     @IBAction func save(_ sender: Any) {
         
+        // Check textfield not empty
         guard let text = textField.text, !text.isEmpty else {
             self.showAlert(title: "Alert", message: "You cannot save an entry without text, please first enter text")
             return
@@ -61,25 +70,39 @@ class NewEntryController: UIViewController {
             return
         }
         
-    
-        
-    
-        
-        let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as! Entry
-        
-        entry.text = text
-        
-        // Check if mood selected, if there is one then put into entry
-        if mood != .none {
-            entry.moodStatus = mood
+        if let currentEntry = currentEntry { // If data in current Entry property then we are editing an entry
+            
+            currentEntry.text = text
+            
+            // Check if mood selected, if there is one then put into entry
+            if mood != .none {
+                currentEntry.moodStatus = mood
+            }
+            
+            // Check if locationText property has text, if it does then put into entry
+            if let locationText = locationText {
+                currentEntry.location = locationText
+            }
+            
+            
+            
+        } else { // Else it must be a new entry
+            let newEntry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as! Entry
+            
+            newEntry.text = text
+            
+            // Check if mood selected, if there is one then put into entry
+            if mood != .none {
+                newEntry.moodStatus = mood
+            }
+            
+            // Check if locationText property has text, if it does then put into entry
+            if let locationText = locationText {
+                newEntry.location = locationText
+            }
+            
+            managedObjectContext.saveChanges()
         }
-        
-        // Check if locationText property has text, if it does then put into entry
-        if let locationText = locationText {
-            entry.location = locationText
-        }
-        
-        managedObjectContext.saveChanges()
         
         self.navigationController?.popViewController(animated: true)
         
