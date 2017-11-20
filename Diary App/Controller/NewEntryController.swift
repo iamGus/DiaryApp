@@ -52,9 +52,7 @@ class NewEntryController: UIViewController {
         }
         
     }
-    @objc static func didEnterText() {
-        print("wohoo")
-    }
+ 
     // Saving changes or adding new entry
     @IBAction func save(_ sender: Any) {
         
@@ -82,9 +80,8 @@ class NewEntryController: UIViewController {
             // Check if locationText property has text, if it does then put into entry
             if let locationText = locationText {
                 currentEntry.location = locationText
+                print("In current entry")
             }
-            
-            
             
         } else { // Else it must be a new entry
             let newEntry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as! Entry
@@ -99,11 +96,12 @@ class NewEntryController: UIViewController {
             // Check if locationText property has text, if it does then put into entry
             if let locationText = locationText {
                 newEntry.location = locationText
+                print("In new entry")
             }
             
-            managedObjectContext.saveChanges()
         }
         
+        managedObjectContext.saveChanges()
         self.navigationController?.popViewController(animated: true)
         
     }

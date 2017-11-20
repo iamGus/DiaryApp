@@ -30,7 +30,7 @@ class DiaryFetchedResultsController: NSFetchedResultsController<Entry>, NSFetche
         }
     }
     
-    // MARK: - Fetched Results Controller Delegate, Updating onlue the rows that have changed.
+    // MARK: - Fetched Results Controller Delegate, Updating only the rows that have changed.
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
