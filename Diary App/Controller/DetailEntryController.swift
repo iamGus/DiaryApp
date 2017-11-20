@@ -54,8 +54,15 @@ class DetailEntryController: UIViewController {
             textViewDidChange(textField)
             dateHeadingLabel.text = Helper.titleDate(date: currentEntry.dateCreated)
             monthTopHeadingLabel.text = Helper.detailTopDate(date: currentEntry.dateCreated)
+            
+            // Check if entry has an edited date
             if let dateEdited = currentEntry.dateEdited {
                 lastUpdatedDateLabel.text = Helper.titleDate(date: dateEdited)
+                
+            // If it does not have an edited date then hide lables
+            } else {
+                lastUpdatedHeadingLabel.isHidden = true
+                lastUpdatedDateLabel.isHidden = true
             }
             if let location = currentEntry.location {
                 addLocationButtonLabel.setTitle(location, for: .normal)
@@ -68,6 +75,7 @@ class DetailEntryController: UIViewController {
             monthTopHeadingLabel.text = Helper.detailTopDate()
             lastUpdatedHeadingLabel.isHidden = true
             lastUpdatedDateLabel.isHidden = true
+            
         }
         
     }

@@ -19,7 +19,7 @@ public class Entry: NSManagedObject {
         
         super.awakeFromInsert()
         self.dateCreated = NSDate()
-        self.dateEdited = NSDate()
+        
         self.mood = 0 //Set mood to 0
     }
     
