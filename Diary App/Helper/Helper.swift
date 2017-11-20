@@ -19,3 +19,22 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 }
+
+class Helper {
+    // Return correctly formatted date for entry date title
+    static func titleDate(date: NSDate = NSDate()) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "EEEE d MMMM"
+        
+        return dateFormatter.string(from: date as Date)
+    }
+    
+    static func detailTopDate(date: NSDate = NSDate()) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "MMMM YYYY"
+        
+        return dateFormatter.string(from: date as Date)
+    }
+}

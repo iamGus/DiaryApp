@@ -18,11 +18,7 @@ struct EntryCellViewModel {
 extension EntryCellViewModel {
     init(entry: Entry) {
         // Format date for date title
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
-        dateFormatter.dateFormat = "EEEE d MMMM"
-        
-        self.dateTitle = dateFormatter.string(from: entry.dateCreated as Date)
+        self.dateTitle = Helper.titleDate(date: entry.dateCreated)
         
         self.text = entry.text
         self.mood = entry.moodStatus

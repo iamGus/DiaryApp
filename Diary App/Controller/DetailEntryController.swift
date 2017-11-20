@@ -13,17 +13,15 @@ class DetailEntryController: UIViewController {
     
     @IBOutlet weak var textField: UITextView!
     @IBOutlet weak var textFieldCountLabel: UILabel!
-    
     @IBOutlet weak var addLocationButtonLabel: UIButton!
-    
-    @IBOutlet weak var monthTopHeadingLabel: NSLayoutConstraint!
+    @IBOutlet weak var monthTopHeadingLabel: UILabel!
     @IBOutlet weak var dateHeadingLabel: UILabel!
     @IBOutlet weak var badButtonLabel: UIButton!
     @IBOutlet weak var averageButtonLabel: UIButton!
     @IBOutlet weak var goodButtonLabel: UIButton!
     @IBOutlet weak var moodIcon: UIImageView!
     
-    
+    // Properties
     var managedObjectContext: NSManagedObjectContext!
     var currentEntry: Entry? // If viewing current entry master VC passes entry to here
     var locationText: String? // Store location from Location VC
@@ -50,10 +48,16 @@ class DetailEntryController: UIViewController {
             textField.text = currentEntry.text
             mood = currentEntry.moodStatus
             textViewDidChange(textField)
-            
+            dateHeadingLabel.text = Helper.titleDate(date: currentEntry.dateCreated)
+            monthTopHeadingLabel.text = Helper.detailTopDate(date: currentEntry.dateCreated)
             if let location = currentEntry.location {
                 addLocationButtonLabel.setTitle(location, for: .normal)
             }
+        } else {
+            // New entry
+            // Set Date title to todays date
+            dateHeadingLabel.text = Helper.titleDate()
+            monthTopHeadingLabel.text = Helper.detailTopDate()
         }
         
     }

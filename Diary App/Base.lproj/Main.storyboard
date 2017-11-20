@@ -314,7 +314,7 @@
                         <outlet property="badButtonLabel" destination="SFP-FL-VkN" id="0HH-yH-LPH"/>
                         <outlet property="dateHeadingLabel" destination="n7z-f7-wyO" id="ZQb-1o-6dd"/>
                         <outlet property="goodButtonLabel" destination="LX0-Iz-Jfu" id="f1f-jM-1tn"/>
-                        <outlet property="monthTopHeadingLabel" destination="UyH-cH-Hbs" id="2yv-gY-5yq"/>
+                        <outlet property="monthTopHeadingLabel" destination="EhR-6v-ZSw" id="n7g-Xj-2oB"/>
                         <outlet property="moodIcon" destination="cdL-bm-jXS" id="6fY-XX-y4l"/>
                         <outlet property="textField" destination="vZm-ze-wmd" id="Cwu-7r-g8R"/>
                         <outlet property="textFieldCountLabel" destination="dF7-gX-s0S" id="cFX-k2-F5p"/>
