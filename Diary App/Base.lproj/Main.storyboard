@@ -101,6 +101,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="contentsViewBottomConstraint" destination="0ER-uC-2Pn" id="gTf-Bi-uxV"/>
                                     <outlet property="dateTitleLabel" destination="ph3-te-f2X" id="YfT-ce-KRv"/>
                                     <outlet property="entryTextLabel" destination="2Lo-Ic-gac" id="h1g-Xq-TbW"/>
                                     <outlet property="locationIcon" destination="2k9-gx-1Jb" id="QiR-8X-tZ8"/>
@@ -130,47 +131,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5o3-TC-CC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="770.39999999999998" y="116.49175412293854"/>
-        </scene>
-        <!--View Edit Entry Controller-->
-        <scene sceneID="wh1-yT-Icw">
-            <objects>
-                <viewController id="eup-50-QOC" customClass="ViewEditEntryController" customModule="Diary_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ORl-5b-R2j">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ImV-LL-X5f">
-                                <rect key="frame" x="67.5" y="61" width="240" height="128"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="qHB-D9-E7g"/>
-                                    <constraint firstAttribute="width" constant="240" id="rPf-sc-STn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ImV-LL-X5f" firstAttribute="centerX" secondItem="ORl-5b-R2j" secondAttribute="centerX" id="Vqp-nS-ETA"/>
-                            <constraint firstItem="ImV-LL-X5f" firstAttribute="top" secondItem="QUr-t7-Bq5" secondAttribute="top" constant="41" id="kWy-f0-xv9"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="QUr-t7-Bq5"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="VE4-48-BJ9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cDy-l7-uSR">
-                            <connections>
-                                <action selector="save:" destination="eup-50-QOC" id="P6l-xS-3ge"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="textField" destination="ImV-LL-X5f" id="waF-x6-Pbt"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fg9-v5-xfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="770" y="884"/>
         </scene>
         <!--New Entry Controller-->
         <scene sceneID="txI-6k-jls">
@@ -394,7 +354,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zrp-h5-y0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="svL-eX-Pcu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2575" y="699"/>
+            <point key="canvasLocation" x="2327" y="118"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wH2-1F-k39">

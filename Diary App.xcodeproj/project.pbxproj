@@ -21,7 +21,6 @@
 		188FCE011FBDA64A0081E55D /* CurrentLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FCE001FBDA64A0081E55D /* CurrentLocationController.swift */; };
 		18E3DE431FB3489000A6A011 /* Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18E3DE411FB3489000A6A011 /* Diary.xcdatamodeld */; };
 		18ED75061FB5A662007C3A4A /* NewEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED75051FB5A662007C3A4A /* NewEntryController.swift */; };
-		18ED75081FB5A68D007C3A4A /* ViewEditEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED75071FB5A68D007C3A4A /* ViewEditEntryController.swift */; };
 		18ED750B1FB5AA33007C3A4A /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED75091FB5AA33007C3A4A /* Entry+CoreDataClass.swift */; };
 		18ED750C1FB5AA33007C3A4A /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED750A1FB5AA33007C3A4A /* Entry+CoreDataProperties.swift */; };
 		18F3210F1FB451AE00B53E31 /* DiaryMasterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3210E1FB451AE00B53E31 /* DiaryMasterController.swift */; };
@@ -60,7 +59,6 @@
 		188FCE001FBDA64A0081E55D /* CurrentLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationController.swift; sourceTree = "<group>"; };
 		18E3DE421FB3489000A6A011 /* Diary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Diary.xcdatamodel; sourceTree = "<group>"; };
 		18ED75051FB5A662007C3A4A /* NewEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryController.swift; sourceTree = "<group>"; };
-		18ED75071FB5A68D007C3A4A /* ViewEditEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEditEntryController.swift; sourceTree = "<group>"; };
 		18ED75091FB5AA33007C3A4A /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		18ED750A1FB5AA33007C3A4A /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		18F3210E1FB451AE00B53E31 /* DiaryMasterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryMasterController.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				18F3210E1FB451AE00B53E31 /* DiaryMasterController.swift */,
 				18F43D501FB99D7000C31E2A /* DiaryFetchedResultsController.swift */,
 				18ED75051FB5A662007C3A4A /* NewEntryController.swift */,
-				18ED75071FB5A68D007C3A4A /* ViewEditEntryController.swift */,
 				188FCE001FBDA64A0081E55D /* CurrentLocationController.swift */,
 			);
 			path = Controller;
@@ -319,7 +316,6 @@
 				183FBACF1FB33CE6000E0ADC /* CoreDataStack.swift in Sources */,
 				18532F921FBC2D91001B2DBC /* UITextFieldLines.swift in Sources */,
 				188FCE011FBDA64A0081E55D /* CurrentLocationController.swift in Sources */,
-				18ED75081FB5A68D007C3A4A /* ViewEditEntryController.swift in Sources */,
 				18ED750B1FB5AA33007C3A4A /* Entry+CoreDataClass.swift in Sources */,
 				18F43D591FB9D57D00C31E2A /* EntryCell.swift in Sources */,
 				183FBAAF1FB326DD000E0ADC /* AppDelegate.swift in Sources */,

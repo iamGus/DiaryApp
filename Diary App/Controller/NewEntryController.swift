@@ -49,6 +49,11 @@ class NewEntryController: UIViewController {
         if let currentEntry = currentEntry {
             textField.text = currentEntry.text
             mood = currentEntry.moodStatus
+            textViewDidChange(textField)
+            
+            if let location = currentEntry.location {
+                addLocationButtonLabel.setTitle(location, for: .normal)
+            }
         }
         
     }
@@ -106,19 +111,6 @@ class NewEntryController: UIViewController {
         
     }
     
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     // Unwinde From CurrentLocationController
     @IBAction func unwindFromLocationVC(_ sender: UIStoryboardSegue) {

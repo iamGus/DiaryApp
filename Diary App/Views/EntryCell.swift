@@ -17,6 +17,7 @@ class EntryCell: UITableViewCell {
     @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var locationTextLabel: UILabel!
     @IBOutlet weak var moodIcon: UIImageView!
+    @IBOutlet weak var contentsViewBottomConstraint: NSLayoutConstraint!
     
     
     override func awakeFromNib() {
@@ -38,7 +39,9 @@ class EntryCell: UITableViewCell {
             locationTextLabel.text = location
         } else {
             // Hide location elements as there is no location text
-            
+            locationIcon.isHidden = true
+            locationTextLabel.isHidden = true
+            contentsViewBottomConstraint.constant = 0
         }
         
         // Set mood icon
@@ -48,6 +51,7 @@ class EntryCell: UITableViewCell {
         case .average: moodIcon.image = #imageLiteral(resourceName: "icn_average")
         case .bad: moodIcon.image = #imageLiteral(resourceName: "icn_bad")
         }
+        
     }
 
 }
