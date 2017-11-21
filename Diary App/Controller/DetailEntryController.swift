@@ -45,6 +45,16 @@ class DetailEntryController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK: Keyboard display and remove
+        
+            //Observers for keyboard appearing and hiding
+            NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+            NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+            //If user touches screen when keyboard shown
+            self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard)))
+        
         textField.delegate = self
 
         // Check if this is an existing entry or a new entry. If exisiting then populate fields:
@@ -149,6 +159,7 @@ class DetailEntryController: UIViewController {
         }
     }
     
+    // Mood buttons action, set mood property
     @IBAction func moodButtonAction(_ sender: UIButton) {
         switch sender {
         case badButtonLabel:
@@ -171,5 +182,29 @@ extension DetailEntryController: UITextViewDelegate {
         } else {
             textFieldCountLabel.textColor = UIColor.red
         }
+    }
+}
+
+// MARK: Additional keyboard setup
+extension DetailEntryController {
+    //Additional keyboard setup
+    @objc func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self.view.layoutIfNeeded() },
+                           completion: nil)
+        }
+    }
+    
+    // Used when user touches outside textfield to close keyboard
+    @objc func dismissKeyboard() {
+        textField.resignFirstResponder()
     }
 }

@@ -23,10 +23,12 @@ class DiaryMasterController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Setup tableview
         tableView.dataSource = dataSource
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
         topTitleLabel.title = dataSource.todaysDate()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
