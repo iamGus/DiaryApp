@@ -47,12 +47,12 @@ class DetailEntryController: UIViewController {
         
         // MARK: Keyboard display and remove
         
-            //Observers for keyboard appearing and hiding
+            // Observers for keyboard appearing and hiding
             NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
             NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
-            //If user touches screen when keyboard shown
+            // If user touches screen when keyboard shown
             self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard)))
         
         textField.delegate = self
@@ -63,7 +63,7 @@ class DetailEntryController: UIViewController {
             mood = currentEntry.moodStatus
             textViewDidChange(textField)
             
-            //Check there is a date in dateCreated
+            // Check there is a date in dateCreated
             if let dateCreated = currentEntry.dateCreated {
                 dateHeadingLabel.text = Helper.titleDate(date: dateCreated)
                 monthTopHeadingLabel.text = Helper.detailTopDate(date: dateCreated)
@@ -195,7 +195,7 @@ extension DetailEntryController: UITextViewDelegate {
 
 // MARK: Additional keyboard setup
 extension DetailEntryController {
-    //Additional keyboard setup
+    // Additional keyboard setup
     @objc func keyboardNotification(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0

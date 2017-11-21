@@ -41,13 +41,11 @@ class DiaryMasterController: UITableViewController {
         return .delete
     }
     
-    
-    
-   //NOTE - check below guard let error handling
+
     
     // MARK: Navigation
     
-    // NOTE: The managedObjectContext instance on NewEntryController is using dependency Injection so is using same as MasterDetail. May need to change to singleton object depending on how using seperate view for cell.
+    // The managedObjectContext instance on DetailEntryController is using dependency Injection so is using same as MasterDetail.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newEntry" {
             let newEntryController = segue.destination as! DetailEntryController

@@ -10,13 +10,6 @@
 import Foundation
 import CoreLocation
 
-extension Coordinate {
-    init(location: CLLocation) {
-        self.latitude = location.coordinate.latitude
-        self.longitude = location.coordinate.longitude
-    }
-}
-
 enum LocationError: Error {
     case unknownError
     case disallowedByUser

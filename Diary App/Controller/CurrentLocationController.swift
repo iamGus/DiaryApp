@@ -17,7 +17,6 @@ class CurrentLocationController: UIViewController {
         return LocationManager(delegate: self, permissionsDelegate: self)
     }()
     
-    var coordinate: Coordinate?
     
     var isAuthorized: Bool {
         let isAuthorizedForLocation = LocationManager.isAuthorized
@@ -37,13 +36,13 @@ class CurrentLocationController: UIViewController {
         if isAuthorized {
             locationManager.requestLocation() // If already authorised then go ahead and request lcoation
         } else {
-            //Else if not authorised then request permission
+            // Else if not authorised then request permission
             requestLocationPermissions()
         }
     }
 
     // MARK: Permissions
-    //To setup permissions func
+    // To setup permissions func
     func requestLocationPermissions() {
         do {
             try locationManager.requestLocationAuthorization()

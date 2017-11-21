@@ -132,7 +132,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Todays date" id="J0x-gM-qYh">
                         <barButtonItem key="backBarButtonItem" title="Back" id="3II-wM-rgp"/>
-                        <barButtonItem key="rightBarButtonItem" image="Icn_write" landscapeImage="Icn_write" style="plain" id="Yz2-n8-htR">
+                        <barButtonItem key="rightBarButtonItem" image="Icn_write" landscapeImage="Icn_write" id="Yz2-n8-htR">
                             <connections>
                                 <segue destination="t8X-po-tDA" kind="show" identifier="newEntry" id="LLS-4Y-TNV"/>
                             </connections>
