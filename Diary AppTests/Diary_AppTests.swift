@@ -12,10 +12,12 @@ import CoreData
 
 class Diary_AppTests: XCTestCase {
     
+   // Entry test data
     var text: String?
-    var dateCreated: NSDate?
-    var dateEdited: NSDate?
+    var newEntry: Entry?
+
     
+    // Core Data properties
     let managedObjectContext = CoreDataStack().managedObjectContext
     
     
@@ -29,19 +31,43 @@ class Diary_AppTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        self.text = "dfd"
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        //self.text = "dfd"
+        let entity = NSEntityDescription.entity(forEntityName: "Entry", in: self.managedObjectContext)
+        newEntry = Entry(entity: entity!, insertInto: managedObjectContext)
+        newEntry?.text = "ddddh"
+        self.managedObjectContext.saveChanges()
+        
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        self.text = nil
+        
+        // Delete all entries in Entry entity
+        //deleteAll()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCreateEntry() {
+        //let newEntry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: self.managedObjectContext) as! Entry
+       // newEntry.text = self.text
+        //self.managedObjectContext.saveChanges()
+        
+        print("count is: \(fetchedResultsController.fetchedObjects?.count)")
+        XCTAssert(fetchedResultsController.fetchedObjects?.count == 1, "Error creating entry")
     }
     
+    //MARK: Helpers
+    
+    // Delete all entries in Entry entity
+    func deleteAll() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entry")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        do {
+            try self.managedObjectContext.execute(batchDeleteRequest)
+        } catch {
+            print("Remove all error: \(error)")
+        }
+    }
     
 }

@@ -39,7 +39,7 @@ extension NSManagedObjectContext {
             do {
                 try save()
             } catch {
-                fatalError("Error: \(error.localizedDescription)") // Note in production app this would need changed
+                print("Error: \(error.localizedDescription)") // Note in production app this would need changed
             }
         }
     }
