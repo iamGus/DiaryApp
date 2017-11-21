@@ -25,10 +25,12 @@ class DiaryMasterController: UITableViewController {
         
         tableView.dataSource = dataSource
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 170
+        tableView.estimatedRowHeight = 150
         topTitleLabel.title = dataSource.todaysDate()
-        
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        emptyTablePlaceholder() // show default text when tableview is empty
     }
     
     // Mark: UITableViewDelegate
@@ -57,5 +59,30 @@ class DiaryMasterController: UITableViewController {
         }
     }
 
+}
+
+// show default text when tableview is empty
+extension DiaryMasterController {
+    func emptyTablePlaceholder(){
+        if self.tableView.visibleCells.isEmpty {
+            tableView.tableFooterView = UIView(frame: CGRect.zero)
+            //tableView.backgroundColor = UIColor.clearColor()
+            
+            let label = UILabel()
+            label.frame.size.height = 42
+            label.frame.size.width = (tableView.frame.size.width-10)
+            label.center = tableView.center
+            label.center.y = (tableView.frame.size.height/2.2)
+            label.numberOfLines = 0
+            label.textColor = UIColor.darkGray
+            label.text = "You have not added any Diary entries yet. Use green pencil at top right."
+            label.textAlignment = .center
+            label.tag = 1
+            
+            self.tableView.addSubview(label)
+        }else{
+            self.tableView.viewWithTag(1)?.removeFromSuperview()
+        }
+    }
 }
 
