@@ -18,8 +18,13 @@ struct EntryCellViewModel {
 extension EntryCellViewModel {
     init(entry: Entry) {
         // Format date for date title
-        self.dateTitle = Helper.titleDate(date: entry.dateCreated)
-        self.text = entry.text
+        if let dateCreated = entry.dateCreated {
+            self.dateTitle = Helper.titleDate(date: dateCreated)
+        } else {
+            self.dateTitle = "Date unknown"
+        }
+        
+        self.text = entry.text ?? "Error: Could not retrieve text"
         self.mood = entry.moodStatus
         self.location = entry.location
     }

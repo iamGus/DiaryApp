@@ -62,8 +62,16 @@ class DetailEntryController: UIViewController {
             textField.text = currentEntry.text
             mood = currentEntry.moodStatus
             textViewDidChange(textField)
-            dateHeadingLabel.text = Helper.titleDate(date: currentEntry.dateCreated)
-            monthTopHeadingLabel.text = Helper.detailTopDate(date: currentEntry.dateCreated)
+            
+            //Check there is a date in dateCreated
+            if let dateCreated = currentEntry.dateCreated {
+                dateHeadingLabel.text = Helper.titleDate(date: dateCreated)
+                monthTopHeadingLabel.text = Helper.detailTopDate(date: dateCreated)
+            } else {
+                dateHeadingLabel.text = "Date Unknown"
+                monthTopHeadingLabel.text = "Date Unknown"
+            }
+            
             
             // Check if entry has an edited date
             if let dateEdited = currentEntry.dateEdited {

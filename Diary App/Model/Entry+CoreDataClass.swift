@@ -25,6 +25,9 @@ public class Entry: NSManagedObject {
     
     // Format month then year into string
     func dateMonth() -> String {
+        guard let dateCreated = dateCreated else {
+            return "Date unknown"
+        }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM YYYY"
         return dateFormatter.string(from: dateCreated as Date)
@@ -32,6 +35,9 @@ public class Entry: NSManagedObject {
     
     // Format month then year into string
     var computedMonth: String {
+        guard let dateCreated = dateCreated else {
+            return "Date unknown"
+        }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM YYYY"
         return dateFormatter.string(from: dateCreated as Date)

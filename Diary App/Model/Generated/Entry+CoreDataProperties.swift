@@ -20,13 +20,16 @@ extension Entry {
         return request
     }
 
-    @NSManaged public var dateCreated: NSDate
+    @NSManaged public var dateCreated: NSDate?
     @NSManaged public var dateEdited: NSDate?
     @NSManaged public var location: String?
     @NSManaged public var mood: Int16
-    @NSManaged public var text: String
+    @NSManaged public var text: String?
     
     @objc var section: String? {
+        guard let dateCreated = dateCreated else {
+            return "Date Unknown"
+        }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM YYYY"
         return dateFormatter.string(from: dateCreated as Date)
