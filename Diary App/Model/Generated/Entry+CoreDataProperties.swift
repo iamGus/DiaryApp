@@ -26,6 +26,7 @@ extension Entry {
     @NSManaged public var mood: Int16
     @NSManaged public var text: String?
     
+    // Created date format for sections to be sorted by
     @objc var section: String? {
         guard let dateCreated = dateCreated else {
             return "Date Unknown"
@@ -35,6 +36,7 @@ extension Entry {
         return dateFormatter.string(from: dateCreated as Date)
     }
     
+    // Allow Mood enum to work with mood int property
     var moodStatus: Mood {
         get {
             return Mood(rawValue: Int(self.mood))!

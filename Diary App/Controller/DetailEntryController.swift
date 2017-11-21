@@ -87,7 +87,7 @@ class DetailEntryController: UIViewController {
             }
         
         } else {
-            // New entry
+            // Must be a new entry
             // Set Date title to todays date
             dateHeadingLabel.text = Helper.titleDate()
             monthTopHeadingLabel.text = Helper.detailTopDate()
@@ -107,7 +107,7 @@ class DetailEntryController: UIViewController {
             return
         }
         
-        // Check characters entered in text field
+        // Check if max characters have been entered in text field
         if textField.text.count > 200 {
             self.showAlert(title: "Alert", message: "Your text exceeds the 200 characters limit, please shorten")
             return
@@ -115,7 +115,7 @@ class DetailEntryController: UIViewController {
         
         if let currentEntry = currentEntry { // If data in current Entry property then we are editing an entry
             
-            currentEntry.text = text
+            currentEntry.text = text // Put current text into textfield
             
             // Check if mood selected, if there is one then put into entry
             if mood != .none {
@@ -181,7 +181,7 @@ class DetailEntryController: UIViewController {
 
 }
 
-// UITableView delegate - Update count
+// UITableView delegate - Update character count
 extension DetailEntryController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         textFieldCountLabel.text = String(textField.text.count)
@@ -195,7 +195,7 @@ extension DetailEntryController: UITextViewDelegate {
 
 // MARK: Additional keyboard setup
 extension DetailEntryController {
-    // Additional keyboard setup
+    
     @objc func keyboardNotification(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0

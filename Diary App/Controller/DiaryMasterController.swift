@@ -28,7 +28,6 @@ class DiaryMasterController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
         topTitleLabel.title = dataSource.todaysDate()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,12 +39,11 @@ class DiaryMasterController: UITableViewController {
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         return .delete
     }
-    
 
     
     // MARK: Navigation
     
-    // The managedObjectContext instance on DetailEntryController is using dependency Injection so is using same as MasterDetail.
+    // The managedObjectContext instance on DetailEntryController is using dependency Injection, so is using same instance as MasterDetail.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "newEntry" {
             let newEntryController = segue.destination as! DetailEntryController

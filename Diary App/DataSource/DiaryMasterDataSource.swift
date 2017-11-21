@@ -61,18 +61,7 @@ class DiaryMasterDataSource: NSObject, UITableViewDataSource {
     }
     
     // Helper to return configured cell
-   
-    /*
-    //no longer used
-    private func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) -> UITableViewCell {
-        let entry = fetchedResultsController.object(at: indexPath)
-        
-        cell.textLabel?.text = entry.text
-        cell.detailTextLabel?.text = entry.dateCreated.description
-        
-        return cell
-    }
- */
+
     
     func object(at indexPath: IndexPath) -> Entry {
         return fetchedResultsController.object(at: indexPath)

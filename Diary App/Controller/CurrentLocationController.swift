@@ -29,7 +29,6 @@ class CurrentLocationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,7 +41,7 @@ class CurrentLocationController: UIViewController {
     }
 
     // MARK: Permissions
-    // To setup permissions func
+    
     func requestLocationPermissions() {
         do {
             try locationManager.requestLocationAuthorization()
@@ -99,7 +98,7 @@ extension CurrentLocationController: LocationPermissionsDelegate {
     
     
     func authorizationSucceeded() {
-        // location manager permission returns scucess so go ahead and now request lcoation
+        // location manager permission returns success so go ahead and now request lcoation
         locationManager.requestLocation()
     }
  
