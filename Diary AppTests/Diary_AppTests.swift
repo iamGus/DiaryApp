@@ -28,13 +28,11 @@ class Diary_AppTests: XCTestCase {
         return controller
     }()
     
-    var sut: CoreDataStack!
+
     
     override func setUp() {
         super.setUp()
-        
-    
-        
+
         do {
                 try fetchedResultsController.performFetch()
             } catch {
@@ -42,11 +40,11 @@ class Diary_AppTests: XCTestCase {
             }
         
         
-        //self.text = "dfd"
-        //let entity = NSEntityDescription.entity(forEntityName: "Entry", in: self.managedObjectContext)
-        //newEntry = Entry(entity: entity!, insertInto: managedObjectContext)
-        //newEntry?.text = "ddddh"
-        //self.managedObjectContext.saveChanges()
+        self.text = "dfd"
+        let entity = NSEntityDescription.entity(forEntityName: "Entry", in: self.managedObjectContext)
+        newEntry = Entry(entity: entity!, insertInto: managedObjectContext)
+        newEntry?.text = "ddddh"
+        self.managedObjectContext.saveChanges()
         
     }
     
@@ -61,13 +59,9 @@ class Diary_AppTests: XCTestCase {
     }
     
     func testCreateEntry() {
-        //let newEntry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: self.managedObjectContext) as! Entry
-        //newEntry.text = self.text
-        //self.managedObjectContext.saveChanges()
         
-        
-        print("count is: \(fetchedResultsController.sections?.count)")
-        print(fetchedResultsController.fetchedObjects?.count)
+        //print("section count is: \(fetchedResultsController.sections?.count)")
+        print("Objects count is: \(fetchedResultsController.fetchedObjects?.count)")
         print(newEntry)
         
         XCTAssert(fetchedResultsController.fetchedObjects?.count != Optional(0), "Error creating entry")
