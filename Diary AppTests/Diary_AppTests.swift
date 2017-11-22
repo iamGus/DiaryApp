@@ -31,11 +31,19 @@ class Diary_AppTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
+    
+        
+        do {
+                try fetchedResultsController.performFetch()
+            } catch {
+                    print("Error fetching item objects: \(error.localizedDescription)")
+            }
+        
         //self.text = "dfd"
-        let entity = NSEntityDescription.entity(forEntityName: "Entry", in: self.managedObjectContext)
-        newEntry = Entry(entity: entity!, insertInto: managedObjectContext)
-        newEntry?.text = "ddddh"
-        self.managedObjectContext.saveChanges()
+        //let entity = NSEntityDescription.entity(forEntityName: "Entry", in: self.managedObjectContext)
+        //newEntry = Entry(entity: entity!, insertInto: managedObjectContext)
+        //newEntry?.text = "ddddh"
+        //self.managedObjectContext.saveChanges()
         
     }
     
@@ -45,16 +53,21 @@ class Diary_AppTests: XCTestCase {
         self.text = nil
         
         // Delete all entries in Entry entity
-        //deleteAll()
+        
+        deleteAll()
     }
     
     func testCreateEntry() {
         //let newEntry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: self.managedObjectContext) as! Entry
-       // newEntry.text = self.text
+        //newEntry.text = self.text
         //self.managedObjectContext.saveChanges()
         
-        print("count is: \(fetchedResultsController.fetchedObjects?.count)")
-        XCTAssert(fetchedResultsController.fetchedObjects?.count == 1, "Error creating entry")
+        
+        print("count is: \(fetchedResultsController.sections?.count)")
+        print(fetchedResultsController.fetchedObjects?.count)
+        print(newEntry)
+        
+        XCTAssert(fetchedResultsController.fetchedObjects?.count != Optional(0), "Error creating entry")
     }
     
     //MARK: Helpers
