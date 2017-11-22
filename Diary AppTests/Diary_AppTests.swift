@@ -13,7 +13,7 @@ import CoreData
 class Diary_AppTests: XCTestCase {
     
    // Entry test data
-    var text: String?
+
     var newEntry: Entry?
 
     
@@ -28,43 +28,36 @@ class Diary_AppTests: XCTestCase {
         return controller
     }()
     
-
-    
     override func setUp() {
         super.setUp()
 
-        do {
-                try fetchedResultsController.performFetch()
-            } catch {
-                    print("Error fetching item objects: \(error.localizedDescription)")
-            }
-        
-        
-        self.text = "dfd"
+        //deleteAll()
+
         let entity = NSEntityDescription.entity(forEntityName: "Entry", in: self.managedObjectContext)
         newEntry = Entry(entity: entity!, insertInto: managedObjectContext)
-        newEntry?.text = "ddddh"
+        //newEntry?.text = "New entry"
         self.managedObjectContext.saveChanges()
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print("Error fetching item objects: \(error.localizedDescription)")
+        }
         
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        self.text = nil
         
         // Delete all entries in Entry entity
-        
-        deleteAll()
+        //deleteAll()
     }
     
     func testCreateEntry() {
         
-        //print("section count is: \(fetchedResultsController.sections?.count)")
-        print("Objects count is: \(fetchedResultsController.fetchedObjects?.count)")
-        print(newEntry)
-        
         XCTAssert(fetchedResultsController.fetchedObjects?.count != Optional(0), "Error creating entry")
+    
     }
     
     //MARK: Helpers
