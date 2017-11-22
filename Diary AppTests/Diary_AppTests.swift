@@ -28,6 +28,8 @@ class Diary_AppTests: XCTestCase {
         return controller
     }()
     
+    var sut: CoreDataStack!
+    
     override func setUp() {
         super.setUp()
         
@@ -38,6 +40,7 @@ class Diary_AppTests: XCTestCase {
             } catch {
                     print("Error fetching item objects: \(error.localizedDescription)")
             }
+        
         
         //self.text = "dfd"
         //let entity = NSEntityDescription.entity(forEntityName: "Entry", in: self.managedObjectContext)

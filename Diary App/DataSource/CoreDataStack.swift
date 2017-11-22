@@ -31,6 +31,23 @@ class CoreDataStack {
         return container
     }()
     
+    
+    
+    // This below function is currently unused. I had the idea of trying to take out some of the entry object creation from the Detailviewcontroller into here but have not managed to to do this yet.
+    func insertEntryItem(text: String?, dateCreated: NSDate?, dateEdited: NSDate?, location: String?, moodStatus: Mood?) -> Entry? {
+        guard let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as? Entry else { return nil }
+        //An entry must not be allwoed to be created if no text so return nill
+        guard let text = text else { return nil }
+        
+        entry.dateCreated = dateCreated
+        entry.dateEdited = dateEdited
+        entry.text = text
+        entry.location = location
+        entry.moodStatus = moodStatus ?? .none
+        
+        return entry
+    }
+    
 }
 
 extension NSManagedObjectContext {
@@ -43,4 +60,5 @@ extension NSManagedObjectContext {
             }
         }
     }
+
 }
