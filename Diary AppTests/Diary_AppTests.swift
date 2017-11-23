@@ -25,22 +25,21 @@ class Diary_AppTests: XCTestCase {
         
         return controller
     }()
+ 
     
     override func setUp() {
         super.setUp()
         
         deleteAll()
         
-        
+        // Create new entry
         newEntry = Entry.insertNewEntry(inManagedObjectContext: managedObjectContext, text: entryText)
-        
+        if newEntry != nil {
+            newEntry?.text = entryText
+        }
         self.managedObjectContext.saveChanges()
         
-        do {
-            try testFetchedResultsController.performFetch()
-        } catch {
-            print("Error fetching item objects: \(error.localizedDescription)")
-        }
+       tryFetch()
         
     }
     
@@ -59,6 +58,27 @@ class Diary_AppTests: XCTestCase {
     
     }
     
+    func testEditEntry() {
+        XCTAssertNotNil(newEntry, "Error creating entry")
+        let newText = "Updated text"
+        newEntry?.text = newText
+        self.managedObjectContext.saveChanges()
+        tryFetch()
+        XCTAssert(newEntry?.text == newText, "Error updating entry, text did not change")
+    }
+    
+    func testDeleteEntry() {
+        XCTAssertNotNil(newEntry, "Error creating entry")
+        if let entry = testFetchedResultsController.fetchedObjects?.first {
+           self.managedObjectContext.delete(entry)
+           self.managedObjectContext.saveChanges()
+        }
+        
+        tryFetch()
+        
+        XCTAssert(testFetchedResultsController.fetchedObjects?.count == Optional(0), "Error deleteing entry")
+    }
+    
     //MARK: Helpers
     
     // Delete all entries in Entry entity
@@ -69,6 +89,15 @@ class Diary_AppTests: XCTestCase {
             try self.managedObjectContext.execute(batchDeleteRequest)
         } catch {
             print("Remove all error: \(error)")
+        }
+    }
+    
+    func tryFetch() {
+        do {
+            try testFetchedResultsController.performFetch()
+        } catch {
+            //NOTE Need to handle error with user
+            print("Error fetching item objects: \(error.localizedDescription)")
         }
     }
     

@@ -66,3 +66,5 @@ class DiaryFetchedResultsController: NSFetchedResultsController<Entry>, NSFetche
         tableView.endUpdates()
     }
 }
+
+
