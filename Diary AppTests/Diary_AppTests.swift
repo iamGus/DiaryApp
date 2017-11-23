@@ -79,6 +79,15 @@ class Diary_AppTests: XCTestCase {
         XCTAssert(testFetchedResultsController.fetchedObjects?.count == Optional(0), "Error deleteing entry")
     }
     
+    //Check a date stamp of todays date is associated with entry
+    func testDateStampEntry() {
+        XCTAssertNotNil(newEntry, "Error creating entry")
+        let todaysDate = NSDate()
+        let todaysDateFormatted = Helper.titleDate(date: todaysDate)
+        let newEntryDateFormatted = Helper.titleDate(date: (newEntry?.dateCreated)!)
+        XCTAssert(todaysDateFormatted == newEntryDateFormatted, "Error wrong date stamp association")
+    }
+    
     //MARK: Helpers
     
     // Delete all entries in Entry entity
