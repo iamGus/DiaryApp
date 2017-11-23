@@ -30,7 +30,7 @@ class UnderlinedTextView: UITextView {
     override func draw(_ rect: CGRect) {
         let ctx = UIGraphicsGetCurrentContext()
         
-        let numberOfLines = Int(rect.height / lineHeight)
+        let numberOfLines = Int(128 / lineHeight)
         let topInset = textContainerInset.top
         
         for i in 1...numberOfLines {

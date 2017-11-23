@@ -113,7 +113,8 @@ class DetailEntryController: UIViewController {
             return
         }
         
-        if let currentEntry = currentEntry { // If data in current Entry property then we are editing an entry
+        // If there is data in current Entry property then we are editing an existing entry
+        if let currentEntry = currentEntry {
             
             currentEntry.text = text // Put current text into textfield
             
@@ -125,14 +126,13 @@ class DetailEntryController: UIViewController {
             // Check if locationText property has text, if it does then put into entry
             if let locationText = locationText {
                 currentEntry.location = locationText
-                print("In current entry")
             }
             
-            // Updated date edited date to todays date
+            // Update date edited date to todays date
             currentEntry.dateEdited = NSDate()
             
         } else { // Else it must be a new entry
-            //Make new insertobject checking first that their is text for the entry. The text should have already been checked above but by having this insertNewEntry method it makes sure that the text has been checked.
+            // Make new insertobject checking first that theere is text for the entry. The text should have already been checked above but by having this insertNewEntry method it makes sure that the text has been checked.
             guard let newEntry = Entry.insertNewEntry(inManagedObjectContext: managedObjectContext, text: text) else {
                 return
             }
@@ -164,7 +164,7 @@ class DetailEntryController: UIViewController {
             if let senderVC = sender.source as? CurrentLocationController {
                 if let senderVCLocationText = senderVC.locationText {
                     self.locationText = senderVCLocationText
-                    addLocationButtonLabel.setTitle(senderVCLocationText, for: .normal) //loaction button text update
+                    addLocationButtonLabel.setTitle(senderVCLocationText, for: .normal) // loaction button text update
                 }
             }
         }

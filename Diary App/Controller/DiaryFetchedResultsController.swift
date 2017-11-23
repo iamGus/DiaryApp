@@ -25,7 +25,7 @@ class DiaryFetchedResultsController: NSFetchedResultsController<Entry>, NSFetche
         do {
             try performFetch()
         } catch {
-            //NOTE Need to handle error with user
+            //Note in production app would need to deal with error with user
             print("Unresolved error \(error.localizedDescription)")
         }
     }

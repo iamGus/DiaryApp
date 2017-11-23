@@ -49,6 +49,7 @@ class Diary_AppTests: XCTestCase {
         
         // Delete all entries in Entry entity
         deleteAll()
+        newEntry = nil
     }
     
     func testCreateEntry() {

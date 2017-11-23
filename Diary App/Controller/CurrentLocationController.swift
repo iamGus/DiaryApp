@@ -33,7 +33,7 @@ class CurrentLocationController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if isAuthorized {
-            locationManager.requestLocation() // If already authorised then go ahead and request lcoation
+            locationManager.requestLocation() // If already authorised then go ahead and request location
         } else {
             // Else if not authorised then request permission
             requestLocationPermissions()
@@ -98,7 +98,7 @@ extension CurrentLocationController: LocationPermissionsDelegate {
     
     
     func authorizationSucceeded() {
-        // location manager permission returns success so go ahead and now request lcoation
+        // location manager permission returns success so go ahead and now request location
         locationManager.requestLocation()
     }
  

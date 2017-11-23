@@ -13,18 +13,16 @@ import CoreData
 
 public class Entry: NSManagedObject {
     
-    // Set date for when entry created and update edited date when edited.
-    
     
     public override func awakeFromInsert() {
         
         super.awakeFromInsert()
-        self.dateCreated = NSDate()
-        
+    
+        self.dateCreated = NSDate() // Set date for when entry created.
         self.mood = 0 //Set mood to 0 = Mood.none
     }
     
-    // An entry must have text to be bale to be insrted into objectContext so the below method checks this before returning an instance of Entry
+    // An entry must have text to be bale to be inserted into objectContext so the below method checks this before returning an instance of Entry
     class func insertNewEntry(inManagedObjectContext managedObjectContext: NSManagedObjectContext, text: String?) -> Entry? {
         guard let text = text else {
             return nil

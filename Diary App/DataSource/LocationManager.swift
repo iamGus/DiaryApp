@@ -62,7 +62,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // status is not Determined so when status changes check:
+        // status is not determined so when status changes check:
         if status == .authorizedWhenInUse {
             permissionsDelegate?.authorizationSucceeded()
         } else if status == .denied || status == .restricted {
@@ -75,7 +75,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             delegate?.failedWithError(.unknownError)
             return
         }
-        // if using this switch statement in real world exspand to deal with other possible error cases
+        // If using this switch statement in real world exspand to deal with other possible error cases
         switch error.code {
         case .locationUnknown, .network: delegate?.failedWithError(.unableToFindLocation)
         case .denied: delegate?.failedWithError(.disallowedByUser)
@@ -90,7 +90,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             return
         }
         
-        // Send location cordidnates to CurrentLocationController
+        // Send location coordinates to CurrentLocationController
         delegate?.obtainedCoordinates(location)
     }
     
