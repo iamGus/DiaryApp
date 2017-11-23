@@ -24,6 +24,7 @@ public class Entry: NSManagedObject {
         self.mood = 0 //Set mood to 0 = Mood.none
     }
     
+    // An entry must have text to be bale to be insrted into objectContext so the below method checks this before returning an instance of Entry
     class func insertNewEntry(inManagedObjectContext managedObjectContext: NSManagedObjectContext, text: String?) -> Entry? {
         guard let text = text else {
             return nil

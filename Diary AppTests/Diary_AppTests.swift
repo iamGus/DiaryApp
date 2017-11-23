@@ -13,16 +13,13 @@ import CoreData
 class Diary_AppTests: XCTestCase {
     
    // Entry test data
-
     var newEntry: Entry?
-    var entryText = "New text"
+    var entryText = "Some text for an entry"
     
     // Core Data properties
     let managedObjectContext = CoreDataStack().managedObjectContext
     
-    
-    
-    lazy var fetchedResultsController: NSFetchedResultsController<Entry> = {
+    lazy var testFetchedResultsController: NSFetchedResultsController<Entry> = {
         let request: NSFetchRequest<Entry> = Entry.fetchRequest()
         let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
@@ -40,7 +37,7 @@ class Diary_AppTests: XCTestCase {
         self.managedObjectContext.saveChanges()
         
         do {
-            try fetchedResultsController.performFetch()
+            try testFetchedResultsController.performFetch()
         } catch {
             print("Error fetching item objects: \(error.localizedDescription)")
         }
@@ -56,8 +53,9 @@ class Diary_AppTests: XCTestCase {
     }
     
     func testCreateEntry() {
-        print(fetchedResultsController.fetchedObjects?.count)
-        XCTAssert(fetchedResultsController.fetchedObjects?.count != Optional(0), "Error creating entry")
+        print(testFetchedResultsController.fetchedObjects?.count)
+        //XCTAssert(testFetchedResultsController.fetchedObjects?.count != Optional(0), "Error creating entry")
+        XCTAssertNotNil(newEntry, "Error creating entry")
     
     }
     

@@ -132,7 +132,10 @@ class DetailEntryController: UIViewController {
             currentEntry.dateEdited = NSDate()
             
         } else { // Else it must be a new entry
-            let newEntry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as! Entry
+            //Make new insertobject checking first that their is text for the entry. The text should have already been checked above but by having this insertNewEntry method it makes sure that the text has been checked.
+            guard let newEntry = Entry.insertNewEntry(inManagedObjectContext: managedObjectContext, text: text) else {
+                return
+            }
             
             newEntry.text = text
             
