@@ -14,13 +14,24 @@ import CoreData
 public class Entry: NSManagedObject {
     
     // Set date for when entry created and update edited date when edited.
+    
+    
     public override func awakeFromInsert() {
-        
         
         super.awakeFromInsert()
         self.dateCreated = NSDate()
         
         self.mood = 0 //Set mood to 0 = Mood.none
+    }
+    
+    class func insertNewEntry(inManagedObjectContext managedObjectContext: NSManagedObjectContext, text: String?) -> Entry? {
+        guard let text = text else {
+            return nil
+        }
+        
+        guard let entry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: managedObjectContext) as? Entry else { return nil }
+        
+        return entry
     }
     
     // Format month then year into string

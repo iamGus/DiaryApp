@@ -15,10 +15,11 @@ class Diary_AppTests: XCTestCase {
    // Entry test data
 
     var newEntry: Entry?
-
+    var entryText = "New text"
     
     // Core Data properties
     let managedObjectContext = CoreDataStack().managedObjectContext
+    
     
     
     lazy var fetchedResultsController: NSFetchedResultsController<Entry> = {
@@ -30,12 +31,12 @@ class Diary_AppTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-
-        //deleteAll()
-
-        let entity = NSEntityDescription.entity(forEntityName: "Entry", in: self.managedObjectContext)
-        newEntry = Entry(entity: entity!, insertInto: managedObjectContext)
-        //newEntry?.text = "New entry"
+        
+        deleteAll()
+        
+        
+        newEntry = Entry.insertNewEntry(inManagedObjectContext: managedObjectContext, text: entryText)
+        
         self.managedObjectContext.saveChanges()
         
         do {
@@ -51,11 +52,11 @@ class Diary_AppTests: XCTestCase {
         super.tearDown()
         
         // Delete all entries in Entry entity
-        //deleteAll()
+        deleteAll()
     }
     
     func testCreateEntry() {
-        
+        print(fetchedResultsController.fetchedObjects?.count)
         XCTAssert(fetchedResultsController.fetchedObjects?.count != Optional(0), "Error creating entry")
     
     }
