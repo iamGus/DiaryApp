@@ -189,16 +189,19 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLu-qa-uoS">
-                                <rect key="frame" x="147" y="334" width="80" height="60"/>
+                                <rect key="frame" x="142" y="334" width="90" height="60"/>
                                 <color key="backgroundColor" red="0.39604109529999998" green="0.39610227939999998" blue="0.39602768420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="DHj-sJ-oq2"/>
-                                    <constraint firstAttribute="width" constant="80" id="JTP-6B-IIu"/>
+                                    <constraint firstAttribute="width" constant="90" id="JTP-6B-IIu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="25"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginAction:" destination="QGy-mU-09W" eventType="touchUpInside" id="Ril-pJ-xkj"/>
                                 </connections>

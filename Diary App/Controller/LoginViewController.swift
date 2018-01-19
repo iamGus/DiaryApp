@@ -5,6 +5,8 @@
 //  Created by Angus Muller on 19/01/2018.
 //  Copyright © 2018 Angus Muller. All rights reserved.
 //
+// Note Currently password when first captured is not encrypted, for a production app the password
+// should use SALT and encrypt it with SHA-2 as soon as it is captured.
 
 import UIKit
 
