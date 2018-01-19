@@ -25,6 +25,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.90499246120452881" green="0.88995271921157837" blue="0.91587191820144653" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Sm5-Nn-usQ">
+                            <rect key="frame" x="0.0" y="198" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items/>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="170" id="xy7-vM-rWh" customClass="EntryCell" customModule="Diary_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="170"/>
@@ -137,6 +142,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Todays date" id="J0x-gM-qYh">
                         <barButtonItem key="backBarButtonItem" title="Back" id="3II-wM-rgp"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="1Fl-C4-IHk">
+                            <connections>
+                                <action selector="logout:" destination="Qcn-hQ-pwK" id="TVd-5e-lnf"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="Icn_write" landscapeImage="Icn_write" id="Yz2-n8-htR">
                             <connections>
                                 <segue destination="t8X-po-tDA" kind="show" identifier="newEntry" id="LLS-4Y-TNV"/>

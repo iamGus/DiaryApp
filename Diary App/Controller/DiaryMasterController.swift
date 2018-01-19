@@ -58,6 +58,13 @@ class DiaryMasterController: UITableViewController {
         }
     }
     
+    
+    @IBAction func logout(_ sender: Any) {
+        isAuthenticated = false
+        performSegue(withIdentifier: "loginView", sender: self)
+    }
+    
+    
     @IBAction func unwindLoginSegue(_ segue: UIStoryboardSegue) {
         isAuthenticated = true
         view.alpha = 1.0
