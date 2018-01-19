@@ -79,7 +79,7 @@ class LoginViewController: UIViewController {
                 fatalError("Error uodating keychain: \(error)")
             }
             
-            // Set hasLoginKey to indicate a password ahs been saved to keychain
+            // Set hasLoginKey to indicate a password has been saved to keychain
             UserDefaults.standard.set(true, forKey: "hasLoginKey")
             loginButton.tag = loginButtonTag
             performSegue(withIdentifier: "dismissLogin", sender: self)
