@@ -19,6 +19,7 @@
 		188FCDFF1FBDA1480081E55D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188FCDFE1FBDA10C0081E55D /* CoreLocation.framework */; };
 		188FCE011FBDA64A0081E55D /* CurrentLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FCE001FBDA64A0081E55D /* CurrentLocationController.swift */; };
 		18E02C602011FA2D00C1B9AE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02C5F2011FA2D00C1B9AE /* LoginViewController.swift */; };
+		18E02C632012059500C1B9AE /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E02C622012059500C1B9AE /* KeychainPasswordItem.swift */; };
 		18E3DE431FB3489000A6A011 /* Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18E3DE411FB3489000A6A011 /* Diary.xcdatamodeld */; };
 		18ED75061FB5A662007C3A4A /* DetailEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED75051FB5A662007C3A4A /* DetailEntryController.swift */; };
 		18ED750B1FB5AA33007C3A4A /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED75091FB5AA33007C3A4A /* Entry+CoreDataClass.swift */; };
@@ -57,6 +58,7 @@
 		188FCDFE1FBDA10C0081E55D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		188FCE001FBDA64A0081E55D /* CurrentLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationController.swift; sourceTree = "<group>"; };
 		18E02C5F2011FA2D00C1B9AE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		18E02C622012059500C1B9AE /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		18E3DE421FB3489000A6A011 /* Diary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Diary.xcdatamodel; sourceTree = "<group>"; };
 		18ED75051FB5A662007C3A4A /* DetailEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEntryController.swift; sourceTree = "<group>"; };
 		18ED75091FB5AA33007C3A4A /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		183FBAAD1FB326DD000E0ADC /* Diary App */ = {
 			isa = PBXGroup;
 			children = (
+				18E02C612012056700C1B9AE /* Keychain */,
 				18369C541FBC72D90019830B /* Helper */,
 				18ED750F1FB5B2DE007C3A4A /* Controller */,
 				18F43D541FB9D51400C31E2A /* View Model */,
@@ -149,6 +152,14 @@
 				188FCDFE1FBDA10C0081E55D /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18E02C612012056700C1B9AE /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				18E02C622012059500C1B9AE /* KeychainPasswordItem.swift */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 		18E3DE441FB348A200A6A011 /* DataSource */ = {
@@ -316,6 +327,7 @@
 				18532F921FBC2D91001B2DBC /* UITextFieldLines.swift in Sources */,
 				188FCE011FBDA64A0081E55D /* CurrentLocationController.swift in Sources */,
 				18ED750B1FB5AA33007C3A4A /* Entry+CoreDataClass.swift in Sources */,
+				18E02C632012059500C1B9AE /* KeychainPasswordItem.swift in Sources */,
 				18F43D591FB9D57D00C31E2A /* EntryCell.swift in Sources */,
 				183FBAAF1FB326DD000E0ADC /* AppDelegate.swift in Sources */,
 				18E3DE431FB3489000A6A011 /* Diary.xcdatamodeld in Sources */,
