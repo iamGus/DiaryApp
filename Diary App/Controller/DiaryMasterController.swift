@@ -16,6 +16,10 @@ class DiaryMasterController: UITableViewController {
     
     let managedObjectContext = CoreDataStack().managedObjectContext
     
+    // Securty properties
+    var isAuthenticated = false
+    var didReturnFromBackground = false
+    
     lazy var dataSource: DiaryMasterDataSource = {
         return DiaryMasterDataSource(tableView: self.tableView, context: managedObjectContext)
     }()
@@ -28,9 +32,12 @@ class DiaryMasterController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 150
         topTitleLabel.title = dataSource.todaysDate()
+        
+        view.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        showLoginView()
         emptyTablePlaceholder() // show default text when tableview is empty
     }
     
@@ -40,8 +47,21 @@ class DiaryMasterController: UITableViewController {
         return .delete
     }
 
+
     
     // MARK: Navigation
+
+    
+    func showLoginView() {
+        if !isAuthenticated {
+            performSegue(withIdentifier: "loginView", sender: self)
+        }
+    }
+    
+    @IBAction func unwindLoginSegue(_ segue: UIStoryboardSegue) {
+        isAuthenticated = true
+        view.alpha = 1.0
+    }
     
     // The managedObjectContext instance on DetailEntryController is using dependency Injection, so is using same instance as MasterDetail.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
